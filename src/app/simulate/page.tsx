@@ -9,10 +9,20 @@ export default async function SimulatePage({
     const mbti = typeof params.mbti === "string" ? params.mbti.toUpperCase() : undefined;
     const target = typeof params.target === "string" ? params.target : undefined;
     const asset = typeof params.asset === "string" ? params.asset : undefined;
+    const monthly = typeof params.monthly === "string" ? params.monthly : undefined;
+    const years = typeof params.years === "string" ? params.years : undefined;
+    const annualReturn = typeof params.return === "string" ? params.return : undefined;
 
     return (
         <main className="min-h-screen bg-zinc-950 text-zinc-50 selection:bg-blue-500/30">
-            <SimulateClient initialMbti={mbti} initialTargetAsset={target} initialAssetAmount={asset} />
+            <SimulateClient
+                initialMbti={mbti}
+                initialTargetAsset={target}
+                initialAssetAmount={asset}
+                initialMonthlyInvestment={monthly}
+                initialYears={years}
+                initialAnnualReturn={annualReturn}
+            />
         </main>
     );
 }

@@ -214,8 +214,8 @@ export default function Results({
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
                         <div className="flex flex-col lg:flex-row lg:items-stretch justify-between gap-8 relative z-10">
                             <div className="lg:w-2/3">
-                                <span className="px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold border border-zinc-700 mb-6 inline-block tracking-wider">
-                                    MBTI特性: {mbtiProfile.type}
+                                <span className="px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold border border-zinc-700 mb-6 inline-block tracking-wider whitespace-nowrap">
+                                    投資タイプ: {mbtiProfile.type} ({mbtiProfile.name})
                                 </span>
                                 <h3 className="text-2xl font-bold text-zinc-100 mb-6">あなた専用の行動提案</h3>
                                 <div className="space-y-4">
@@ -251,7 +251,7 @@ export default function Results({
                                 href="https://toushi-shindan.vercel.app/"
                                 className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-full font-medium"
                             >
-                                MBTI診断をやり直す
+                                投資診断をやり直す
                             </a>
                         </div>
                     </div>

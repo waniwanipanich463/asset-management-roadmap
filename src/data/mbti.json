@@ -1,114 +1,130 @@
 [
   {
-    "type": "INTJ",
-    "strength": "長期戦略に強い",
-    "weakness": "完璧主義で動かない",
-    "action": "まず少額（月3万円）から自動積立を設定する",
-    "perspectiveShift": "その「完璧なタイミング」、待つことによる機会損失を計算してみませんか？"
+    "type": "SILD",
+    "name": "堅実な長期積立家",
+    "strength": "市場平均を確実に享受",
+    "weakness": "短期間で資産は増えない",
+    "action": "退屈でも売買を繰り返さないこと。",
+    "perspectiveShift": "退屈でも売買を繰り返さないこと。"
   },
   {
-    "type": "INTP",
-    "strength": "本質的な分析力が高い",
-    "weakness": "知識メタボで実践しない",
-    "action": "思考を一旦止めて、インデックス投資の口座を開設する",
-    "perspectiveShift": "「知っている」だけで満足していませんか？知識は行動して初めて価値になります。"
+    "type": "SILF",
+    "name": "利回り追求の守備職人",
+    "strength": "定期的な現金収入(配当)",
+    "weakness": "減配リスク",
+    "action": "（上限）特定のセクターに偏りすぎないよう注意。",
+    "perspectiveShift": "（上限）特定のセクターに偏りすぎないよう注意。"
   },
   {
-    "type": "ENTJ",
-    "strength": "決断力と実行力がある",
-    "weakness": "リスクを取りすぎる",
-    "action": "生活防衛資金をしっかり確保した上で投資枠を決断する",
-    "perspectiveShift": "その自信、相場の大暴落の波にも100%耐えられると言い切れますか？"
+    "type": "SITD",
+    "name": "短期ディフェンダー",
+    "strength": "現金比率が高く暴落に強い",
+    "weakness": "インフレに弱い",
+    "action": "参戦欲に負けて無計画なエントリーをしない。",
+    "perspectiveShift": "参戦欲に負けて無計画なエントリーをしない。"
   },
   {
-    "type": "ENTP",
-    "strength": "新しい投資手法に強い",
-    "weakness": "飽きっぽく続かない",
-    "action": "設定したら一切見ない「ほったらかし投資」のしくみを作る",
-    "perspectiveShift": "「退屈な投資」こそが、実は長期的な最適解になる時もあるのでは？"
+    "type": "SITF",
+    "name": "要塞構築型",
+    "strength": "資産保全が最優先",
+    "weakness": "資産が増えない（インフレ負け）",
+    "action": "一発逆転を狙った投機に手を出さない。",
+    "perspectiveShift": "一発逆転を狙った投機に手を出さない。"
   },
   {
-    "type": "INFJ",
-    "strength": "理想を深く追求する",
-    "weakness": "決断までに時間がかかる",
-    "action": "納得できる投信（ESGなど）を一つ選んで、少額で保有してみる",
-    "perspectiveShift": "「100%の理想」を待つより、「70%での一歩」が未来に役立ちませんか？"
+    "type": "SALD",
+    "name": "銘柄分析の探求者",
+    "strength": "企業分析力が身につく",
+    "weakness": "分析に多大な時間がかかる",
+    "action": "頻繁な乗り換え（回転売買）を避ける。",
+    "perspectiveShift": "頻繁な乗り換え（回転売買）を避ける。"
   },
   {
-    "type": "INFP",
-    "strength": "自分の芯を持っている",
-    "weakness": "数字や管理を避ける傾向",
-    "action": "家計簿アプリを入れて、まずは収支の現実と向き合う",
-    "perspectiveShift": "お金と向き合うことは、あなたの理想を守るための大切な手段ではないですか？"
+    "type": "SALF",
+    "name": "集中投資の信奉者",
+    "strength": "成功時のリターンが絶大",
+    "weakness": "1銘柄の失敗が致命傷に",
+    "action": "予想外の下振れに備える。",
+    "perspectiveShift": "予想外の下振れに備える。"
   },
   {
-    "type": "ENFJ",
-    "strength": "周囲への影響力が強い",
-    "weakness": "他人の意見に流されやすい",
-    "action": "自分のための確固たる投資ルールを一つ書き出してみる",
-    "perspectiveShift": "その投資の決断、実は周りの流行に流されているだけではありませんか？"
+    "type": "SATD",
+    "name": "慎重なスイングトレーダー",
+    "strength": "短期的な利益を積み重ねる",
+    "weakness": "常に相場を見る必要がある",
+    "action": "焦ってエントリーポイントを妥協しない。",
+    "perspectiveShift": "焦ってエントリーポイントを妥協しない。"
   },
   {
-    "type": "ENFP",
-    "strength": "可能性を楽しむ才能",
-    "weakness": "計画的なコツコツが苦手",
-    "action": "給与天引きなどで、強制的に先取り貯蓄するしくみを作る",
-    "perspectiveShift": "「ルールに縛られる」のではなく「未来の自由を仕組みで買う」と考えてみませんか？"
+    "type": "SATF",
+    "name": "一点突破の狙撃手",
+    "strength": "得意パターンでの勝率が高い",
+    "weakness": "チャンスが来るまで待てない",
+    "action": "「勝ち癖」による過信に注意。",
+    "perspectiveShift": "「勝ち癖」による過信に注意。"
   },
   {
-    "type": "ISTJ",
-    "strength": "計画通りに実行できる",
-    "weakness": "想定外の変化に弱い",
-    "action": "暴落時の対応ルールを今の冷静なうちから決めておく",
-    "perspectiveShift": "「過去の常識や予定」が、いつまでも続くと思い込んでいませんか？"
+    "type": "GILD",
+    "name": "成長重視の積立投資家",
+    "strength": "世界経済の成長を最大享受",
+    "weakness": "暴落時の資産減少が大きい",
+    "action": "下落相場が続いても積立を止めない。",
+    "perspectiveShift": "下落相場が続いても積立を止めない。"
   },
   {
-    "type": "ISFJ",
-    "strength": "堅実でリスクを避ける",
-    "weakness": "インフレで資産が目減りする",
-    "action": "投資の「参加しないことによるリスク」について調べてみる",
-    "perspectiveShift": "実は「何もしないで貯金だけすること」が今一番のリスクかもしれませんよ？"
+    "type": "GILF",
+    "name": "セクターローテーション戦略家",
+    "strength": "旬のテーマに乗れる",
+    "weakness": "タイミングを誤ると高値掴み",
+    "action": "自分の相場観を過信しない。",
+    "perspectiveShift": "自分の相場観を過信しない。"
   },
   {
-    "type": "ESTJ",
-    "strength": "合理的で管理能力が高い",
-    "weakness": "短期的効率を求めすぎる",
-    "action": "長期投資では「待つこと」も効率的なのだと割り切る",
-    "perspectiveShift": "その短期的な「効率」、数十年という長期目線でも本当に効率的ですか？"
+    "type": "GITD",
+    "name": "モメンタムフォロワー",
+    "strength": "短期間で爆発的な利益",
+    "weakness": "トレンド転換で大きな損失",
+    "action": "焦って高値掴みをしない。",
+    "perspectiveShift": "焦って高値掴みをしない。"
   },
   {
-    "type": "ESFJ",
-    "strength": "安定と調和を好む",
-    "weakness": "周りがやっていないと不安",
-    "action": "身近な人ではなく、歴史的・世界的なデータに目を向けてみる",
-    "perspectiveShift": "「みんながやっていない＝正解ではない」とは限りませんよね？"
+    "type": "GITF",
+    "name": "テーマハ イ・プリースト",
+    "strength": "時代の寵児となる銘柄に投資",
+    "weakness": "ブームが終わると暴落",
+    "action": "熱狂相場の「熱暴走」に巻き込まれない。",
+    "perspectiveShift": "熱狂相場の「熱暴走」に巻き込まれない。"
   },
   {
-    "type": "ISTP",
-    "strength": "臨機応変な対応が得意",
-    "weakness": "長期的な計画が立てられない",
-    "action": "10年後の自分を想像して、そこから必要な金額だけを逆算してみる",
-    "perspectiveShift": "「今が良ければいい」で、未来の自分は困りませんか？"
+    "type": "GALD",
+    "name": "アクティブ・ストックピッカー",
+    "strength": "未来のGAFAMを発掘",
+    "weakness": "成功確率は低い",
+    "action": "情報過多にならず、自分の軸を持つ。",
+    "perspectiveShift": "情報過多にならず、自分の軸を持つ。"
   },
   {
-    "type": "ISFP",
-    "strength": "今この瞬間を楽しめる",
-    "weakness": "将来への備えを後回しにする",
-    "action": "趣味代の10%だけでも、未来の自分へ仕送り（積立）する",
-    "perspectiveShift": "「今」を楽しむためにも、「未来」への最低限の土台は必要ではないですか？"
+    "type": "GALF",
+    "name": "グロース集中投資家",
+    "strength": "資産が数倍になる可能性",
+    "weakness": "分散効果がゼロに近い",
+    "action": "ボラティリティへの高い耐性が必要。",
+    "perspectiveShift": "ボラティリティへの高い耐性が必要。"
   },
   {
-    "type": "ESTP",
-    "strength": "行動力がありチャンスに強い",
-    "weakness": "ギャンブル的投資になりがち",
-    "action": "「退屈なコア資産」と「攻めのサテライト資産」の予算を明確に分ける",
-    "perspectiveShift": "その投資、実はただの「スリルを味わうギャンブル」になっていませんか？"
+    "type": "GATD",
+    "name": "システムトレーダー",
+    "strength": "感情を排除した取引",
+    "weakness": "システム構築・維持の手間",
+    "action": "取引コスト負けに注意。",
+    "perspectiveShift": "取引コスト負けに注意。"
   },
   {
-    "type": "ESFP",
-    "strength": "楽天的に物事を捉える",
-    "weakness": "楽観視しすぎて計画が破綻する",
-    "action": "悲観的なシナリオでの資産シミュレーションを一度だけ直視する",
-    "perspectiveShift": "シミュレーション上の「最悪のケース」も想定した上で動けていますか？"
+    "type": "GATF",
+    "name": "アグレッシブ・スペキュレーター",
+    "strength": "短期間で億り人",
+    "weakness": "一瞬で退場するリスク",
+    "action": "相場（ギャンブル）依存にならないよう注意。",
+    "perspectiveShift": "相場（ギャンブル）依存にならないよう注意。"
   }
 ]

@@ -9,20 +9,29 @@ import mbtiData from "@/data/mbti.json";
 export default function SimulateClient({
     initialMbti,
     initialTargetAsset,
-    initialAssetAmount
+    initialAssetAmount,
+    initialMonthlyInvestment,
+    initialYears,
+    initialAnnualReturn
 }: {
     initialMbti?: string,
     initialTargetAsset?: string,
-    initialAssetAmount?: string
+    initialAssetAmount?: string,
+    initialMonthlyInvestment?: string,
+    initialYears?: string,
+    initialAnnualReturn?: string
 }) {
     const defaultInitialAsset = initialAssetAmount && !isNaN(Number(initialAssetAmount)) ? Number(initialAssetAmount) : 1000000;
     const defaultTargetAsset = initialTargetAsset && !isNaN(Number(initialTargetAsset)) ? Number(initialTargetAsset) : 100000000;
+    const defaultMonthlyInvestment = initialMonthlyInvestment && !isNaN(Number(initialMonthlyInvestment)) ? Number(initialMonthlyInvestment) : 50000;
+    const defaultYears = initialYears && !isNaN(Number(initialYears)) ? Number(initialYears) : 20;
+    const defaultAnnualReturn = initialAnnualReturn && !isNaN(Number(initialAnnualReturn)) ? Number(initialAnnualReturn) : 5;
 
     const [input, setInput] = useState<SimulationInput>({
         initialAsset: defaultInitialAsset,
-        monthlyInvestment: 50000,
-        years: 20,
-        annualReturn: 5,
+        monthlyInvestment: defaultMonthlyInvestment,
+        years: defaultYears,
+        annualReturn: defaultAnnualReturn,
         targetAsset: defaultTargetAsset,
     });
 
