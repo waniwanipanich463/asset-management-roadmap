@@ -65,9 +65,28 @@ export default function SimulateClient({
                 <p className="text-gray-500 text-lg md:text-xl font-bold tracking-tight">
                     まずは現実を知る。そして、未来をデザインする。
                 </p>
-                <div className="flex justify-center pt-4">
-                    <a href="https://toushi-shindan.vercel.app/" className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-accent-teal transition-all bg-white hover:bg-white px-5 py-2.5 rounded-full font-bold border border-gray-100 hover:border-accent-teal/20 shadow-sm backdrop-blur-sm">
-                        ← 投資診断サイトへ戻る
+                <div className="flex justify-center pt-8 w-full z-20 relative">
+                    <a href="https://toushi-shindan.vercel.app/"
+                        className="group relative block w-[90%] max-w-[500px] transition-transform duration-500 hover:scale-[1.03] active:scale-95 cursor-pointer"
+                        style={{ transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)" }}>
+                        {/* デフォルト画像 (通常時表示) */}
+                        <Image
+                            src="/cta-button-off.png"
+                            alt="投資診断サイトへ戻る"
+                            width={1000}
+                            height={250}
+                            className="w-full h-auto drop-shadow-xl absolute top-0 left-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                            unoptimized
+                        />
+                        {/* ホバー時画像 (ホバー時のみ表示) */}
+                        <Image
+                            src="/cta-button-on.png"
+                            alt="投資診断サイトへ戻る"
+                            width={1000}
+                            height={250}
+                            className="w-full h-auto drop-shadow-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 relative"
+                            unoptimized
+                        />
                     </a>
                 </div>
             </header>
