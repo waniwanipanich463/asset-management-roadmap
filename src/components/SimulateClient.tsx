@@ -49,7 +49,7 @@ export default function SimulateClient({
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-12 md:py-20 flex flex-col gap-16">
-            <header className="text-center space-y-6 max-w-4xl mx-auto px-4">
+            <header className="text-center space-y-6 w-full mx-auto">
                 <h1 className="sr-only">つむぎの資産運用シミュレーション</h1>
                 <div className="flex justify-center w-full">
                     <Image
@@ -58,7 +58,7 @@ export default function SimulateClient({
                         width={1200}
                         height={675}
                         priority
-                        className="w-full max-w-4xl h-auto drop-shadow-2xl"
+                        className="w-full h-auto drop-shadow-2xl"
                         unoptimized
                     />
                 </div>
