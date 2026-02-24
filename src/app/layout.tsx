@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "資産運用シミュレーション",
+  title: "つむぎの資産運用シミュレーション",
   description: "未来をデザインするための資産運用シミュレーションツール",
 };
 
