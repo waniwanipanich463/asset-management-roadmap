@@ -192,18 +192,18 @@ export default function Results({
             {/* MBTI x Phase Advice Area */}
             <div className="grid grid-cols-1 gap-6">
                 {/* Phase Action */}
-                <div className="bg-gradient-to-br from-indigo-950/80 to-blue-950/40 border border-indigo-500/30 rounded-3xl p-6 md:p-10 relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-[0.08] transition-opacity duration-700 blur-sm">
+                <div className="bg-gradient-to-br from-indigo-950 to-blue-950 border border-indigo-500/50 rounded-3xl p-6 md:p-10 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-700 blur-[2px]">
                         <ShieldCheck size={160} />
                     </div>
                     <div className="relative z-10">
-                        <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30 mb-6 inline-block tracking-wider">
+                        <span className="px-3 py-1 rounded-full bg-indigo-500/40 text-indigo-100 text-xs font-bold border border-indigo-400/50 mb-6 inline-block tracking-wider">
                             現在のフェーズ: {currentPhase.name}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">{currentPhase.strategy}</h3>
-                        <p className="text-indigo-200/90 text-lg mb-6 font-medium">{currentPhase.priority}</p>
-                        <div className="bg-black/20 p-5 rounded-2xl border border-white/5 backdrop-blur-sm">
-                            <p className="text-sm md:text-base text-zinc-300 leading-relaxed">{currentPhase.description}</p>
+                        <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight drop-shadow-sm">{currentPhase.strategy}</h3>
+                        <p className="text-indigo-100 text-lg mb-6 font-bold">{currentPhase.priority}</p>
+                        <div className="bg-black/40 p-5 rounded-2xl border border-white/10 backdrop-blur-md">
+                            <p className="text-sm md:text-base text-zinc-100 leading-relaxed font-medium">{currentPhase.description}</p>
                         </div>
                     </div>
                 </div>
