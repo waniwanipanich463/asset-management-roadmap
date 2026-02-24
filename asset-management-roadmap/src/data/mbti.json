@@ -1,0 +1,130 @@
+[
+  {
+    "type": "SILD",
+    "name": "堅実な長期積立家",
+    "strength": "市場平均を確実に享受",
+    "weakness": "短期間で資産は増えない",
+    "action": "退屈でも売買を繰り返さないこと。",
+    "perspectiveShift": "退屈でも売買を繰り返さないこと。"
+  },
+  {
+    "type": "SILF",
+    "name": "利回り追求の守備職人",
+    "strength": "定期的な現金収入(配当)",
+    "weakness": "減配リスク",
+    "action": "（上限）特定のセクターに偏りすぎないよう注意。",
+    "perspectiveShift": "（上限）特定のセクターに偏りすぎないよう注意。"
+  },
+  {
+    "type": "SITD",
+    "name": "短期ディフェンダー",
+    "strength": "現金比率が高く暴落に強い",
+    "weakness": "インフレに弱い",
+    "action": "参戦欲に負けて無計画なエントリーをしない。",
+    "perspectiveShift": "参戦欲に負けて無計画なエントリーをしない。"
+  },
+  {
+    "type": "SITF",
+    "name": "要塞構築型",
+    "strength": "資産保全が最優先",
+    "weakness": "資産が増えない（インフレ負け）",
+    "action": "一発逆転を狙った投機に手を出さない。",
+    "perspectiveShift": "一発逆転を狙った投機に手を出さない。"
+  },
+  {
+    "type": "SALD",
+    "name": "銘柄分析の探求者",
+    "strength": "企業分析力が身につく",
+    "weakness": "分析に多大な時間がかかる",
+    "action": "頻繁な乗り換え（回転売買）を避ける。",
+    "perspectiveShift": "頻繁な乗り換え（回転売買）を避ける。"
+  },
+  {
+    "type": "SALF",
+    "name": "集中投資の信奉者",
+    "strength": "成功時のリターンが絶大",
+    "weakness": "1銘柄の失敗が致命傷に",
+    "action": "予想外の下振れに備える。",
+    "perspectiveShift": "予想外の下振れに備える。"
+  },
+  {
+    "type": "SATD",
+    "name": "慎重なスイングトレーダー",
+    "strength": "短期的な利益を積み重ねる",
+    "weakness": "常に相場を見る必要がある",
+    "action": "焦ってエントリーポイントを妥協しない。",
+    "perspectiveShift": "焦ってエントリーポイントを妥協しない。"
+  },
+  {
+    "type": "SATF",
+    "name": "一点突破の狙撃手",
+    "strength": "得意パターンでの勝率が高い",
+    "weakness": "チャンスが来るまで待てない",
+    "action": "「勝ち癖」による過信に注意。",
+    "perspectiveShift": "「勝ち癖」による過信に注意。"
+  },
+  {
+    "type": "GILD",
+    "name": "成長重視の積立投資家",
+    "strength": "世界経済の成長を最大享受",
+    "weakness": "暴落時の資産減少が大きい",
+    "action": "下落相場が続いても積立を止めない。",
+    "perspectiveShift": "下落相場が続いても積立を止めない。"
+  },
+  {
+    "type": "GILF",
+    "name": "セクターローテーション戦略家",
+    "strength": "旬のテーマに乗れる",
+    "weakness": "タイミングを誤ると高値掴み",
+    "action": "自分の相場観を過信しない。",
+    "perspectiveShift": "自分の相場観を過信しない。"
+  },
+  {
+    "type": "GITD",
+    "name": "モメンタムフォロワー",
+    "strength": "短期間で爆発的な利益",
+    "weakness": "トレンド転換で大きな損失",
+    "action": "焦って高値掴みをしない。",
+    "perspectiveShift": "焦って高値掴みをしない。"
+  },
+  {
+    "type": "GITF",
+    "name": "テーマハ イ・プリースト",
+    "strength": "時代の寵児となる銘柄に投資",
+    "weakness": "ブームが終わると暴落",
+    "action": "熱狂相場の「熱暴走」に巻き込まれない。",
+    "perspectiveShift": "熱狂相場の「熱暴走」に巻き込まれない。"
+  },
+  {
+    "type": "GALD",
+    "name": "アクティブ・ストックピッカー",
+    "strength": "未来のGAFAMを発掘",
+    "weakness": "成功確率は低い",
+    "action": "情報過多にならず、自分の軸を持つ。",
+    "perspectiveShift": "情報過多にならず、自分の軸を持つ。"
+  },
+  {
+    "type": "GALF",
+    "name": "グロース集中投資家",
+    "strength": "資産が数倍になる可能性",
+    "weakness": "分散効果がゼロに近い",
+    "action": "ボラティリティへの高い耐性が必要。",
+    "perspectiveShift": "ボラティリティへの高い耐性が必要。"
+  },
+  {
+    "type": "GATD",
+    "name": "システムトレーダー",
+    "strength": "感情を排除した取引",
+    "weakness": "システム構築・維持の手間",
+    "action": "取引コスト負けに注意。",
+    "perspectiveShift": "取引コスト負けに注意。"
+  },
+  {
+    "type": "GATF",
+    "name": "アグレッシブ・スペキュレーター",
+    "strength": "短期間で億り人",
+    "weakness": "一瞬で退場するリスク",
+    "action": "相場（ギャンブル）依存にならないよう注意。",
+    "perspectiveShift": "相場（ギャンブル）依存にならないよう注意。"
+  }
+]
