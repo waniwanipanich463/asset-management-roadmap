@@ -87,7 +87,7 @@ export default function Results({
                             </p>
                             <div className="bg-rose-50 border border-rose-100 p-4 rounded-2xl text-sm flex flex-col gap-2">
                                 <span className="flex items-center gap-1.5 text-rose-600 font-bold"><AlertCircle size={16} /> 代替シナリオ提案</span>
-                                <span className="text-rose-700/80 font-medium">目標に到達するには毎月 <strong>{Math.ceil(requiredMonthly / 1000).toLocaleString()}千円</strong> の積立が必要です。</span>
+                                <span className="text-rose-700/80 font-medium">目標に到達するには毎月 <strong>{Math.ceil(requiredMonthly / 1000).toLocaleString()}千円</strong> の積立が目安となります。</span>
                             </div>
                         </div>
                     )}
