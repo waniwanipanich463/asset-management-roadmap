@@ -27,9 +27,9 @@ export default function Results({
         if (active && payload && payload.length) {
             return (
                 <div className="bg-white border border-gray-100 p-4 rounded-2xl shadow-xl">
-                    <p className="text-gray-500 mb-2 font-medium">{`${label}年目`}</p>
+                    <p className="text-gray-700 mb-2 font-medium">{`${label}年目`}</p>
                     <p className="text-accent-teal font-bold mb-1">{`総資産: ${Math.floor(payload[0].value / 10000).toLocaleString()}万円`}</p>
-                    <p className="text-gray-400 text-sm hidden sm:block">{`元本: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
+                    <p className="text-gray-600 text-sm hidden sm:block">{`元本: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
                 </div>
             );
         }
@@ -59,11 +59,11 @@ export default function Results({
                     <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity text-accent-teal">
                         <TrendingUp size={80} />
                     </div>
-                    <p className="text-gray-500 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">最終予想資産 ({input.years}年後)</p>
+                    <p className="text-gray-700 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">最終予想資産 ({input.years}年後)</p>
                     <p className="text-4xl lg:text-5xl font-extrabold text-foreground font-sans tracking-tight mt-2 whitespace-nowrap">
-                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-gray-400 font-sans font-medium">万円</span>
+                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-gray-600 font-sans font-medium">万円</span>
                     </p>
-                    <p className="mt-4 text-xs font-bold text-gray-400">
+                    <p className="mt-4 text-xs font-bold text-gray-600">
                         元本: {Math.floor((input.initialAsset + input.monthlyInvestment * 12 * input.years) / 10000).toLocaleString()}万円
                     </p>
                 </div>
@@ -72,13 +72,13 @@ export default function Results({
                     <div className="absolute top-0 right-0 p-6 opacity-5">
                         <Target size={80} className={isTargetReached ? "text-emerald-500" : "text-rose-500"} />
                     </div>
-                    <p className="text-gray-500 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">目標達成状況</p>
+                    <p className="text-gray-700 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">目標達成状況</p>
                     {isTargetReached ? (
                         <div className="mt-2 text-emerald-600">
                             <p className="text-3xl font-bold whitespace-nowrap mb-2">
                                 {result.targetReachYear}年目で達成🎉
                             </p>
-                            <p className="text-sm text-gray-500 leading-relaxed font-medium">素晴らしいペースです。このまま継続し、次のフェーズを目指しましょう。</p>
+                            <p className="text-sm text-gray-700 leading-relaxed font-medium">素晴らしいペースです。このまま継続し、次のフェーズを目指しましょう。</p>
                         </div>
                     ) : (
                         <div className="mt-2 text-rose-600">
@@ -133,7 +133,7 @@ export default function Results({
                     {/* Desktop View */}
                     <table className="hidden md:table w-full text-left border-collapse">
                         <thead>
-                            <tr className="border-b border-gray-100 text-gray-400 text-sm">
+                            <tr className="border-b border-gray-100 text-gray-600 text-sm">
                                 <th className="py-4 px-4 font-bold w-24 tracking-wider">経過年</th>
                                 <th className="py-4 px-4 font-bold w-32 tracking-wider">予想資産</th>
                                 <th className="py-4 px-4 font-bold tracking-wider">歴史的イベント例</th>
@@ -143,17 +143,17 @@ export default function Results({
                             {[result.yearlyData[0], ...decadesData].map((d, i) => {
                                 const eventInfo = i > 0 ? displayedEvents[i - 1].event : null;
                                 return (
-                                    <tr key={d.year} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors group">
-                                        <td className="py-5 px-4 font-mono text-zinc-300 font-medium">{d.year}年目</td>
-                                        <td className="py-5 px-4 font-bold text-blue-400 font-mono text-lg">{Math.floor(d.amount / 10000).toLocaleString()}万円</td>
+                                    <tr key={d.year} className="border-b border-gray-100 hover:bg-gray-50 transition-colors group">
+                                        <td className="py-5 px-4 font-mono text-gray-500 font-medium">{d.year}年目</td>
+                                        <td className="py-5 px-4 font-bold text-blue-600 font-mono text-lg">{Math.floor(d.amount / 10000).toLocaleString()}万円</td>
                                         <td className="py-5 px-4">
                                             {eventInfo ? (
-                                                <div className="opacity-80 group-hover:opacity-100 transition-opacity">
-                                                    <span className="text-sm font-bold text-zinc-200 bg-zinc-800 px-2 py-1 rounded inline-block mb-2">{eventInfo.title} ({eventInfo.year}年)</span>
-                                                    <p className="text-sm text-zinc-400">{eventInfo.description}</p>
+                                                <div className="opacity-90 group-hover:opacity-100 transition-opacity">
+                                                    <span className="text-sm font-bold text-white bg-gray-600 px-2 py-1 rounded inline-block mb-2">{eventInfo.title} ({eventInfo.year}年)</span>
+                                                    <p className="text-sm text-gray-600">{eventInfo.description}</p>
                                                 </div>
                                             ) : (
-                                                <span className="text-zinc-600 text-sm italic">- シミュレーション開始 -</span>
+                                                <span className="text-gray-500 text-sm italic">- シミュレーション開始 -</span>
                                             )}
                                         </td>
                                     </tr>
@@ -169,17 +169,17 @@ export default function Results({
                             return (
                                 <div key={d.year} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col gap-4">
                                     <div className="flex justify-between items-center border-b border-gray-200 pb-3">
-                                        <span className="font-sans text-gray-500 font-bold text-sm tracking-widest">{d.year}年目</span>
+                                        <span className="font-sans text-gray-700 font-bold text-sm tracking-widest">{d.year}年目</span>
                                         <span className="font-bold text-accent-teal font-sans text-2xl">{Math.floor(d.amount / 10000).toLocaleString()}万円</span>
                                     </div>
                                     <div className="pt-1">
                                         {eventInfo ? (
                                             <div>
-                                                <span className="text-xs font-bold text-zinc-300 bg-zinc-800 px-2 py-1 rounded inline-block mb-1.5">{eventInfo.title} ({eventInfo.year}年)</span>
-                                                <p className="text-xs text-zinc-400 leading-relaxed">{eventInfo.description}</p>
+                                                <span className="text-xs font-bold text-white bg-gray-600 px-2 py-1 rounded inline-block mb-1.5">{eventInfo.title} ({eventInfo.year}年)</span>
+                                                <p className="text-xs text-gray-600 leading-relaxed">{eventInfo.description}</p>
                                             </div>
                                         ) : (
-                                            <span className="text-zinc-600 text-xs italic">- シミュレーション開始 -</span>
+                                            <span className="text-gray-500 text-xs italic">- シミュレーション開始 -</span>
                                         )}
                                     </div>
                                 </div>
@@ -221,11 +221,11 @@ export default function Results({
                                 <div className="space-y-6">
                                     <div className="flex flex-col sm:flex-row gap-6">
                                         <div className="flex-1 bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                                            <p className="text-xs text-gray-400 mb-3 font-bold tracking-widest">STRENGTH</p>
+                                            <p className="text-xs text-gray-600 mb-3 font-bold tracking-widest">STRENGTH</p>
                                             <p className="text-lg font-bold text-accent-teal">{mbtiProfile.strength}</p>
                                         </div>
                                         <div className="flex-1 bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                                            <p className="text-xs text-gray-400 mb-3 font-bold tracking-widest">WEAKNESS</p>
+                                            <p className="text-xs text-gray-600 mb-3 font-bold tracking-widest">WEAKNESS</p>
                                             <p className="text-lg font-bold text-rose-500">{mbtiProfile.weakness}</p>
                                         </div>
                                     </div>
@@ -239,7 +239,7 @@ export default function Results({
                             <div className="lg:w-1/3 bg-gray-50/50 p-10 rounded-[2rem] border border-gray-100 flex flex-col justify-center relative shadow-inner">
                                 <div className="absolute top-6 left-6 text-6xl text-gray-200 font-serif opacity-50 select-none">“</div>
                                 <div className="absolute bottom-6 right-6 text-6xl text-gray-200 font-serif opacity-50 select-none">”</div>
-                                <p className="text-xs text-gray-400 mb-6 font-bold tracking-widest text-center uppercase">Perspective Shift</p>
+                                <p className="text-xs text-gray-600 mb-6 font-bold tracking-widest text-center uppercase">Perspective Shift</p>
                                 <p className="text-foreground font-bold text-center text-lg leading-relaxed relative z-10 italic">
                                     {mbtiProfile.perspectiveShift}
                                 </p>
@@ -249,7 +249,7 @@ export default function Results({
                         <div className="mt-12 text-center sm:text-right">
                             <a
                                 href="https://toushi-shindan.vercel.app/"
-                                className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-accent-teal transition-all bg-gray-100 hover:bg-white border border-transparent hover:border-accent-teal/20 px-6 py-3 rounded-full font-bold shadow-sm"
+                                className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-accent-teal transition-all bg-gray-100 hover:bg-white border border-transparent hover:border-accent-teal/20 px-6 py-3 rounded-full font-bold shadow-sm"
                             >
                                 投資診断をやり直す
                             </a>
