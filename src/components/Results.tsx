@@ -26,10 +26,10 @@ export default function Results({
     const CustomTooltip = ({ active, payload, label }: any) => {
         if (active && payload && payload.length) {
             return (
-                <div className="bg-zinc-950 border border-zinc-700 p-4 rounded-xl shadow-2xl">
-                    <p className="text-zinc-400 mb-2 font-medium">{`${label}年目`}</p>
-                    <p className="text-blue-400 font-bold mb-1">{`総資産: ${Math.floor(payload[0].value / 10000).toLocaleString()}万円`}</p>
-                    <p className="text-zinc-500 text-sm hidden sm:block">{`元本: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
+                <div className="bg-white border border-gray-100 p-4 rounded-2xl shadow-xl">
+                    <p className="text-gray-500 mb-2 font-medium">{`${label}年目`}</p>
+                    <p className="text-accent-teal font-bold mb-1">{`総資産: ${Math.floor(payload[0].value / 10000).toLocaleString()}万円`}</p>
+                    <p className="text-gray-400 text-sm hidden sm:block">{`元本: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
                 </div>
             );
         }
@@ -55,39 +55,39 @@ export default function Results({
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* KPI Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 relative overflow-hidden group hover:border-zinc-700 transition-colors">
-                    <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 relative overflow-hidden group hover:border-accent-teal/30 transition-all shadow-sm">
+                    <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity text-accent-teal">
                         <TrendingUp size={80} />
                     </div>
-                    <p className="text-zinc-400 font-medium mb-1 whitespace-nowrap">最終予想資産 ({input.years}年後)</p>
-                    <p className="text-4xl lg:text-5xl font-extrabold text-zinc-100 font-mono tracking-tight mt-2 whitespace-nowrap">
-                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-zinc-500 font-sans font-medium">万円</span>
+                    <p className="text-gray-500 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">最終予想資産 ({input.years}年後)</p>
+                    <p className="text-4xl lg:text-5xl font-extrabold text-foreground font-sans tracking-tight mt-2 whitespace-nowrap">
+                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-gray-400 font-sans font-medium">万円</span>
                     </p>
-                    <p className="mt-4 text-xs font-medium text-zinc-500">
+                    <p className="mt-4 text-xs font-bold text-gray-400">
                         元本: {Math.floor((input.initialAsset + input.monthlyInvestment * 12 * input.years) / 10000).toLocaleString()}万円
                     </p>
                 </div>
 
-                <div className={`bg-zinc-900 border ${isTargetReached ? 'border-emerald-900/50' : 'border-rose-900/50'} rounded-3xl p-6 relative overflow-hidden`}>
+                <div className={`bg-white border ${isTargetReached ? 'border-emerald-100' : 'border-rose-100'} rounded-[2.5rem] p-8 relative overflow-hidden shadow-sm`}>
                     <div className="absolute top-0 right-0 p-6 opacity-5">
                         <Target size={80} className={isTargetReached ? "text-emerald-500" : "text-rose-500"} />
                     </div>
-                    <p className="text-zinc-400 font-medium mb-1 whitespace-nowrap">目標達成状況</p>
+                    <p className="text-gray-500 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">目標達成状況</p>
                     {isTargetReached ? (
-                        <div className="mt-2">
-                            <p className="text-3xl font-bold text-emerald-400 whitespace-nowrap">
+                        <div className="mt-2 text-emerald-600">
+                            <p className="text-3xl font-bold whitespace-nowrap mb-2">
                                 {result.targetReachYear}年目で達成🎉
                             </p>
-                            <p className="mt-4 text-sm text-zinc-400 leading-relaxed">素晴らしいペースです。このまま継続し、次のフェーズを目指しましょう。</p>
+                            <p className="text-sm text-gray-500 leading-relaxed font-medium">素晴らしいペースです。このまま継続し、次のフェーズを目指しましょう。</p>
                         </div>
                     ) : (
-                        <div className="mt-2 text-zinc-300">
-                            <p className="text-3xl font-bold text-rose-400 whitespace-nowrap">
+                        <div className="mt-2 text-rose-600">
+                            <p className="text-3xl font-bold whitespace-nowrap mb-2">
                                 目標未達
                             </p>
-                            <div className="mt-4 bg-rose-500/10 border border-rose-500/20 p-3 rounded-xl text-sm flex flex-col gap-2">
-                                <span className="flex items-center gap-1.5 text-rose-300 font-bold"><AlertCircle size={16} /> 代替シナリオ提案</span>
-                                <span className="text-rose-200/80">目標に到達するには毎月 <strong>{Math.ceil(requiredMonthly / 1000).toLocaleString()}千円</strong> の積立が必要です。</span>
+                            <div className="bg-rose-50 border border-rose-100 p-4 rounded-2xl text-sm flex flex-col gap-2">
+                                <span className="flex items-center gap-1.5 text-rose-600 font-bold"><AlertCircle size={16} /> 代替シナリオ提案</span>
+                                <span className="text-rose-700/80 font-medium">目標に到達するには毎月 <strong>{Math.ceil(requiredMonthly / 1000).toLocaleString()}千円</strong> の積立が必要です。</span>
                             </div>
                         </div>
                     )}
@@ -105,12 +105,12 @@ export default function Results({
                         <AreaChart data={result.yearlyData} margin={{ top: 10, right: 10, left: 20, bottom: 0 }}>
                             <defs>
                                 <linearGradient id="colorAmount" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.4} />
-                                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                                    <stop offset="5%" stopColor="#2dd4bf" stopOpacity={0.4} />
+                                    <stop offset="95%" stopColor="#2dd4bf" stopOpacity={0} />
                                 </linearGradient>
                                 <linearGradient id="colorPrincipal" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#71717a" stopOpacity={0.3} />
-                                    <stop offset="95%" stopColor="#71717a" stopOpacity={0} />
+                                    <stop offset="5%" stopColor="#94a3b8" stopOpacity={0.2} />
+                                    <stop offset="95%" stopColor="#94a3b8" stopOpacity={0} />
                                 </linearGradient>
                             </defs>
                             <CartesianGrid strokeDasharray="3 3" stroke="#27272a" vertical={false} />
@@ -125,18 +125,18 @@ export default function Results({
             </div>
 
             {/* 10 Year Table & Events */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-8 shadow-2xl">
-                <h3 className="text-lg font-bold text-zinc-100 mb-6 flex items-center gap-2">
-                    <Clock size={20} className="text-blue-500" /> 10年ごとのマイルストーン
+            <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 shadow-sm">
+                <h3 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
+                    <Clock size={24} className="text-accent-teal" /> 10年ごとのマイルストーン
                 </h3>
                 <div className="w-full">
                     {/* Desktop View */}
                     <table className="hidden md:table w-full text-left border-collapse">
                         <thead>
-                            <tr className="border-b border-zinc-800 text-zinc-400 text-sm">
-                                <th className="py-3 px-4 font-medium w-24">経過年</th>
-                                <th className="py-3 px-4 font-medium w-32">予想資産</th>
-                                <th className="py-3 px-4 font-medium">歴史的イベント例</th>
+                            <tr className="border-b border-gray-100 text-gray-400 text-sm">
+                                <th className="py-4 px-4 font-bold w-24 tracking-wider">経過年</th>
+                                <th className="py-4 px-4 font-bold w-32 tracking-wider">予想資産</th>
+                                <th className="py-4 px-4 font-bold tracking-wider">歴史的イベント例</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -167,10 +167,10 @@ export default function Results({
                         {[result.yearlyData[0], ...decadesData].map((d, i) => {
                             const eventInfo = i > 0 ? displayedEvents[i - 1].event : null;
                             return (
-                                <div key={d.year} className="bg-zinc-950/50 rounded-2xl p-4 border border-zinc-800/50 flex flex-col gap-3">
-                                    <div className="flex justify-between items-center border-b border-zinc-800/50 pb-2">
-                                        <span className="font-mono text-zinc-400 font-medium text-sm">{d.year}年目</span>
-                                        <span className="font-bold text-blue-400 font-mono text-xl">{Math.floor(d.amount / 10000).toLocaleString()}万円</span>
+                                <div key={d.year} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col gap-4">
+                                    <div className="flex justify-between items-center border-b border-gray-200 pb-3">
+                                        <span className="font-sans text-gray-500 font-bold text-sm tracking-widest">{d.year}年目</span>
+                                        <span className="font-bold text-accent-teal font-sans text-2xl">{Math.floor(d.amount / 10000).toLocaleString()}万円</span>
                                     </div>
                                     <div className="pt-1">
                                         {eventInfo ? (
@@ -210,46 +210,46 @@ export default function Results({
 
                 {/* MBTI Advice */}
                 {mbtiProfile && (
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
-                        <div className="flex flex-col lg:flex-row lg:items-stretch justify-between gap-8 relative z-10">
+                    <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 md:p-12 shadow-sm relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-teal/5 blur-[100px] rounded-full pointer-events-none"></div>
+                        <div className="flex flex-col lg:flex-row lg:items-stretch justify-between gap-10 relative z-10">
                             <div className="lg:w-2/3">
-                                <span className="px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-xs font-bold border border-zinc-700 mb-6 inline-block tracking-wider whitespace-nowrap">
+                                <span className="px-4 py-1.5 rounded-full bg-accent-teal/10 text-accent-teal text-xs font-bold border border-accent-teal/20 mb-8 inline-block tracking-widest whitespace-nowrap">
                                     投資タイプ: {mbtiProfile.type} ({mbtiProfile.name})
                                 </span>
-                                <h3 className="text-2xl font-bold text-zinc-100 mb-6">あなた専用の行動提案</h3>
-                                <div className="space-y-4">
-                                    <div className="flex flex-col sm:flex-row gap-4">
-                                        <div className="flex-1 bg-zinc-950 p-5 rounded-2xl border border-zinc-800/80">
-                                            <p className="text-xs text-zinc-500 mb-2 font-bold tracking-widest">STRENGTH</p>
-                                            <p className="text-base font-medium text-blue-400">{mbtiProfile.strength}</p>
+                                <h3 className="text-3xl font-bold text-foreground mb-8">あなた専用の行動提案</h3>
+                                <div className="space-y-6">
+                                    <div className="flex flex-col sm:flex-row gap-6">
+                                        <div className="flex-1 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                            <p className="text-xs text-gray-400 mb-3 font-bold tracking-widest">STRENGTH</p>
+                                            <p className="text-lg font-bold text-accent-teal">{mbtiProfile.strength}</p>
                                         </div>
-                                        <div className="flex-1 bg-zinc-950 p-5 rounded-2xl border border-zinc-800/80">
-                                            <p className="text-xs text-zinc-500 mb-2 font-bold tracking-widest">WEAKNESS</p>
-                                            <p className="text-base font-medium text-rose-400">{mbtiProfile.weakness}</p>
+                                        <div className="flex-1 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                            <p className="text-xs text-gray-400 mb-3 font-bold tracking-widest">WEAKNESS</p>
+                                            <p className="text-lg font-bold text-rose-500">{mbtiProfile.weakness}</p>
                                         </div>
                                     </div>
-                                    <div className="bg-gradient-to-r from-blue-900/40 to-indigo-900/20 border border-blue-500/30 p-6 rounded-2xl mt-4">
-                                        <p className="text-xs text-blue-400 mb-2 font-bold tracking-widest">NEXT ACTION</p>
-                                        <p className="text-xl md:text-2xl font-bold text-white">{mbtiProfile.action}</p>
+                                    <div className="bg-gradient-to-r from-accent-teal/10 to-teal-50 border border-accent-teal/20 p-8 rounded-3xl mt-6">
+                                        <p className="text-xs text-accent-teal mb-3 font-bold tracking-widest uppercase">Next Action</p>
+                                        <p className="text-2xl md:text-3xl font-black text-foreground">{mbtiProfile.action}</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="lg:w-1/3 bg-zinc-800/40 p-8 rounded-2xl border border-zinc-700/50 flex flex-col justify-center relative">
-                                <div className="absolute top-4 left-4 text-4xl text-zinc-700 font-serif opacity-50">"</div>
-                                <div className="absolute bottom-4 right-4 text-4xl text-zinc-700 font-serif opacity-50">"</div>
-                                <p className="text-xs text-zinc-400 mb-4 font-bold tracking-widest text-center">価値観の再定義</p>
-                                <p className="text-zinc-200 font-bold text-center leading-relaxed relative z-10">
+                            <div className="lg:w-1/3 bg-gray-50/50 p-10 rounded-[2rem] border border-gray-100 flex flex-col justify-center relative shadow-inner">
+                                <div className="absolute top-6 left-6 text-6xl text-gray-200 font-serif opacity-50 select-none">“</div>
+                                <div className="absolute bottom-6 right-6 text-6xl text-gray-200 font-serif opacity-50 select-none">”</div>
+                                <p className="text-xs text-gray-400 mb-6 font-bold tracking-widest text-center uppercase">Perspective Shift</p>
+                                <p className="text-foreground font-bold text-center text-lg leading-relaxed relative z-10 italic">
                                     {mbtiProfile.perspectiveShift}
                                 </p>
                             </div>
                         </div>
 
-                        <div className="mt-8 text-center sm:text-right">
+                        <div className="mt-12 text-center sm:text-right">
                             <a
                                 href="https://toushi-shindan.vercel.app/"
-                                className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-full font-medium"
+                                className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-accent-teal transition-all bg-gray-100 hover:bg-white border border-transparent hover:border-accent-teal/20 px-6 py-3 rounded-full font-bold shadow-sm"
                             >
                                 投資診断をやり直す
                             </a>

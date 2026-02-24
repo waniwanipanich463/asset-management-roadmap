@@ -15,8 +15,8 @@ export default function InputForm({
 
     return (
         <div className="flex flex-col gap-8">
-            <h2 className="text-xl font-bold text-zinc-100 flex items-center gap-2">
-                <span className="w-2 h-6 bg-blue-500 rounded-full inline-block"></span>
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+                <span className="w-2 h-8 bg-accent-teal rounded-full inline-block"></span>
                 シミュレーション設定
             </h2>
 
@@ -28,7 +28,7 @@ export default function InputForm({
                         <button
                             key={val}
                             onClick={() => update('initialAsset', val)}
-                            className="flex-1 py-1.5 text-xs font-semibold rounded-lg bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors"
+                            className="flex-1 py-2 text-xs font-bold rounded-xl bg-white border border-gray-200 text-foreground hover:border-accent-teal hover:text-accent-teal transition-all shadow-sm"
                         >
                             {val / 10000}万円
                         </button>
@@ -38,14 +38,14 @@ export default function InputForm({
                     type="number"
                     value={input.initialAsset}
                     onChange={(e) => update('initialAsset', Number(e.target.value))}
-                    className="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-mono"
+                    className="w-full bg-white border border-gray-200 rounded-2xl px-4 py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-accent-teal/50 transition-all font-mono text-lg shadow-sm"
                 />
                 <input
                     type="range"
                     min="0" max="50000000" step="100000"
                     value={input.initialAsset}
                     onChange={(e) => update('initialAsset', Number(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent-teal"
                 />
             </div>
 
@@ -56,44 +56,44 @@ export default function InputForm({
                     type="number"
                     value={input.monthlyInvestment}
                     onChange={(e) => update('monthlyInvestment', Number(e.target.value))}
-                    className="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-mono"
+                    className="w-full bg-white border border-gray-200 rounded-2xl px-4 py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-accent-teal/50 transition-all font-mono text-lg shadow-sm"
                 />
                 <input
                     type="range"
                     min="0" max="1000000" step="5000"
                     value={input.monthlyInvestment}
                     onChange={(e) => update('monthlyInvestment', Number(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent-teal"
                 />
             </div>
 
             {/* 運用期間 */}
             <div className="space-y-3">
                 <div className="flex justify-between">
-                    <label className="text-sm text-zinc-400 font-medium">運用期間（年）</label>
-                    <span className="text-sm font-bold text-blue-400">{input.years}年</span>
+                    <label className="text-sm text-gray-500 font-medium">運用期間（年）</label>
+                    <span className="text-sm font-bold text-accent-teal">{input.years}年</span>
                 </div>
                 <input
                     type="range"
                     min="1" max="50" step="1"
                     value={input.years}
                     onChange={(e) => update('years', Number(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent-teal"
                 />
             </div>
 
             {/* 想定年利 */}
             <div className="space-y-3">
                 <div className="flex justify-between">
-                    <label className="text-sm text-zinc-400 font-medium">想定年利（%）</label>
-                    <span className="text-sm font-bold text-blue-400">{input.annualReturn}%</span>
+                    <label className="text-sm text-gray-500 font-medium">想定年利（%）</label>
+                    <span className="text-sm font-bold text-accent-teal">{input.annualReturn}%</span>
                 </div>
                 <input
                     type="range"
                     min="0" max="20" step="0.1"
                     value={input.annualReturn}
                     onChange={(e) => update('annualReturn', Number(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-accent-teal"
                 />
             </div>
 
@@ -105,7 +105,7 @@ export default function InputForm({
                         <button
                             key={val}
                             onClick={() => update('targetAsset', val)}
-                            className="flex-1 py-1.5 text-xs font-semibold rounded-lg bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors"
+                            className="flex-1 py-2 text-xs font-bold rounded-xl bg-white border border-gray-200 text-foreground hover:border-accent-teal hover:text-accent-teal transition-all shadow-sm"
                         >
                             {val / 100000000 >= 1 ? `${val / 100000000}億円` : `${val / 10000}万円`}
                         </button>
@@ -115,7 +115,7 @@ export default function InputForm({
                     type="number"
                     value={input.targetAsset}
                     onChange={(e) => update('targetAsset', Number(e.target.value))}
-                    className="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-mono"
+                    className="w-full bg-white border border-gray-200 rounded-2xl px-4 py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-accent-teal/50 transition-all font-mono text-lg shadow-sm"
                 />
             </div>
         </div>
