@@ -5,7 +5,7 @@ export default function Footer() {
         <footer className="mt-8 border-t border-gray-100 bg-white/50 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="text-gray-400 text-sm font-bold tracking-widest">
-                    © 2026 資産運用シミュレーション
+                    © 2026 つむぎの資産運用シミュレーション
                 </div>
 
                 <nav className="flex items-center gap-8">
