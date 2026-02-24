@@ -30,21 +30,23 @@ export default function OperatorPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6 text-lg">
                             <div className="text-zinc-500 font-medium">運営者名</div>
-                            <div className="text-white">〇〇</div>
+                            <div className="text-white">つむぎ部屋</div>
 
                             <div className="text-zinc-500 font-medium">所在地</div>
                             <div className="text-white">日本</div>
 
                             <div className="text-zinc-500 font-medium">お問い合わせ</div>
-                            <div className="text-white">example@example.com</div>
+                            <div className="text-white">money.revenge001@gmail.com</div>
 
                             <div className="text-zinc-500 font-medium">サイトURL</div>
                             <div className="text-blue-400 hover:underline">
-                                <a href="https://xxxx.com">https://xxxx.com</a>
+                                <a href="https://youtube.com/channel/UC2VfIGmIV_2FSB7r0fIkbKg?si=4RIJ_ZebY8oljmo4" target="_blank" rel="noopener noreferrer">
+                                    https://youtube.com/channel/UC2VfIGmIV_2FSB7r0fIkbKg?si=4RIJ_ZebY8oljmo4
+                                </a>
                             </div>
 
                             <div className="text-zinc-500 font-medium">制定日</div>
-                            <div className="text-white">2026年〇月〇日</div>
+                            <div className="text-white">11月28日</div>
                         </div>
                     </section>
 
