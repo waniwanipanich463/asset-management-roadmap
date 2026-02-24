@@ -1,17 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X, Youtube } from "lucide-react";
 
 export default function YouTubePopup() {
     const [isOpen, setIsOpen] = useState(false);
+    const [videoId, setVideoId] = useState("MwK7VcSjl4A"); // Fallback ID
 
-    // https://www.youtube.com/watch?v=MwK7VcSjl4A&t=12s
-    // Embed URL format: https://www.youtube.com/embed/MwK7VcSjl4A?start=12
-    const videoId = "MwK7VcSjl4A";
-    const startTime = 12;
-    const embedUrl = `https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1`;
+    useEffect(() => {
+        const fetchLatestVideo = async () => {
+            try {
+                const res = await fetch("/api/video-id");
+                const data = await res.json();
+                if (data.videoId) {
+                    setVideoId(data.videoId);
+                }
+            } catch (error) {
+                console.error("Failed to fetch latest video:", error);
+            }
+        };
+        fetchLatestVideo();
+    }, []);
+
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
     const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
     return (
