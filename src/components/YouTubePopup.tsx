@@ -47,6 +47,11 @@ export default function YouTubePopup() {
                 {/* Overlay with Glow */}
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
 
+                {/* New Video Banner */}
+                <div className="absolute top-0 left-0 w-full bg-red-600/90 backdrop-blur-sm text-white text-[10px] md:text-xs font-bold py-1 md:py-1.5 text-center z-20 shadow-sm tracking-wider">
+                    新着動画をチェック
+                </div>
+
                 {/* Play Icon Overlay */}
                 <div className="relative z-10 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-red-500 transition-colors">
                     <Play className="w-6 h-6 fill-current text-white ml-1" />
