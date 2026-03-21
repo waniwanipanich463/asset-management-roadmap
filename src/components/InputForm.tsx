@@ -22,7 +22,7 @@ export default function InputForm({
 
             {/* 初期資産 */}
             <div className="space-y-3">
-                <label className="text-sm text-zinc-400 font-medium">初期資産（円）</label>
+                <label className="text-sm text-gray-600 font-medium">初期資産（円）</label>
                 <div className="flex gap-2 mb-2">
                     {[1000000, 5000000, 10000000].map(val => (
                         <button
@@ -51,7 +51,7 @@ export default function InputForm({
 
             {/* 毎月積立 */}
             <div className="space-y-3">
-                <label className="text-sm text-zinc-400 font-medium">毎月積立（円）</label>
+                <label className="text-sm text-gray-600 font-medium">毎月積立（円）</label>
                 <input
                     type="number"
                     value={input.monthlyInvestment}
@@ -70,7 +70,7 @@ export default function InputForm({
             {/* 運用期間 */}
             <div className="space-y-3">
                 <div className="flex justify-between">
-                    <label className="text-sm text-gray-500 font-medium">運用期間（年）</label>
+                    <label className="text-sm text-gray-700 font-medium">運用期間（年）</label>
                     <span className="text-sm font-bold text-accent-teal">{input.years}年</span>
                 </div>
                 <input
@@ -85,7 +85,7 @@ export default function InputForm({
             {/* 想定年利 */}
             <div className="space-y-3">
                 <div className="flex justify-between">
-                    <label className="text-sm text-gray-500 font-medium">想定年利（%）</label>
+                    <label className="text-sm text-gray-700 font-medium">想定年利（%）</label>
                     <span className="text-sm font-bold text-accent-teal">{input.annualReturn}%</span>
                 </div>
                 <input
@@ -99,7 +99,7 @@ export default function InputForm({
 
             {/* 目標資産 */}
             <div className="space-y-3 pt-6 border-t border-zinc-800 mt-2">
-                <label className="text-sm text-zinc-400 font-medium">目標資産（円） ※逆算シミュレーション用</label>
+                <label className="text-sm text-gray-600 font-medium">目標資産（円） ※逆算シミュレーション用</label>
                 <div className="flex gap-2 mb-2">
                     {[50000000, 100000000, 200000000].map(val => (
                         <button

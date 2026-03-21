@@ -65,11 +65,32 @@ export default function SimulateClient({
                 </div>
 
                 {/* コピー＆CTAボタン (既存の幅制限を適用) */}
-                <div className="max-w-6xl mx-auto px-4 text-center mt-8 md:mt-12 space-y-8">
-                    <p className="text-gray-500 text-lg md:text-xl font-bold tracking-tight">
+                <div className="max-w-6xl mx-auto px-4 text-center mt-8 md:mt-12">
+                    <p className="text-gray-700 text-lg md:text-xl font-bold tracking-tight mb-8">
                         まずは現実を知る。そして、未来をデザインする。
                     </p>
-                    <div className="flex justify-center w-full z-20 relative">
+                    <div className="flex flex-col items-center gap-6 w-full z-20 relative">
+                        {/* サービス詳細LPへのリンク */}
+                        <a 
+                            href="https://tumugi-lp.vercel.app" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative flex items-center justify-center w-[90%] max-w-[500px] h-[72px] rounded-full overflow-hidden bg-gradient-to-r from-accent-teal to-[#4ade80] p-[2.5px] transition-all duration-500 hover:scale-[1.03] active:scale-[0.98] shadow-[0_10px_30px_-10px_rgba(45,212,191,0.4)]"
+                            style={{ transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)" }}
+                        >
+                            <div className="flex items-center justify-center w-full h-full bg-white rounded-full transition-all duration-500 group-hover:bg-transparent px-8">
+                                <span className="text-accent-teal group-hover:text-white font-black text-lg md:text-xl transition-colors tracking-wider">
+                                    つむぎのサービス詳細を見る
+                                </span>
+                                <div className="ml-3 w-6 h-6 flex items-center justify-center rounded-full bg-accent-teal group-hover:bg-white text-white group-hover:text-accent-teal transition-all duration-500 shadow-sm">
+                                    <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-3.5 h-3.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+
+                        {/* 既存の診断サイトへの戻りボタン */}
                         <a href="https://toushi-shindan.vercel.app/"
                             className="group relative block w-[90%] max-w-[500px] transition-transform duration-500 hover:scale-[1.03] active:scale-95 cursor-pointer"
                             style={{ transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)" }}>
