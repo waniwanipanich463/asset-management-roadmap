@@ -26,10 +26,10 @@ export default function Results({
     const CustomTooltip = ({ active, payload, label }: any) => {
         if (active && payload && payload.length) {
             return (
-                <div className="bg-white border border-gray-100 p-4 rounded-2xl shadow-xl">
-                    <p className="text-gray-700 mb-2 font-medium">{`${label}年目`}</p>
-                    <p className="text-accent-teal font-bold mb-1">{`総資産: ${Math.floor(payload[0].value / 10000).toLocaleString()}万円`}</p>
-                    <p className="text-gray-600 text-sm hidden sm:block">{`元本: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
+                <div className="bg-black/80 border border-cp-cyan backdrop-blur-md p-4 rounded-none shadow-[0_0_15px_rgba(0,255,255,0.2)]">
+                    <p className="text-zinc-500 mb-2 font-mono text-[10px] uppercase">{`Horizon: ${label} Years`}</p>
+                    <p className="text-cp-cyan font-black text-lg mb-1">{`Asset: ${Math.floor(payload[0].value / 10000).toLocaleString()}万円`}</p>
+                    <p className="text-zinc-600 text-[10px] font-mono uppercase hidden sm:block">{`Principal: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
                 </div>
             );
         }
@@ -52,42 +52,43 @@ export default function Results({
     });
 
     return (
-        <div className="space-y-8 animate-in fade-in duration-700">
+        <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             {/* KPI Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 relative overflow-hidden group hover:border-accent-teal/30 transition-all shadow-sm">
-                    <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity text-accent-teal">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div className="glass-card-cp rounded-none border-l-4 border-cp-fuchsia p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity text-cp-fuchsia">
                         <TrendingUp size={80} />
                     </div>
-                    <p className="text-gray-700 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">最終予想資産 ({input.years}年後)</p>
-                    <p className="text-4xl lg:text-5xl font-extrabold text-foreground font-sans tracking-tight mt-2 whitespace-nowrap">
-                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-gray-600 font-sans font-medium">万円</span>
+                    <p className="text-cp-fuchsia font-black text-[10px] mb-2 uppercase tracking-[0.2em] neon-text-fuchsia">Estimated_Output ({input.years}Y)</p>
+                    <p className="text-4xl lg:text-5xl font-black text-white font-sans tracking-tighter mt-2 whitespace-nowrap">
+                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-zinc-500 font-sans font-medium uppercase">JPY(w)</span>
                     </p>
-                    <p className="mt-4 text-xs font-bold text-gray-600">
-                        元本: {Math.floor((input.initialAsset + input.monthlyInvestment * 12 * input.years) / 10000).toLocaleString()}万円
-                    </p>
+                    <div className="mt-6 flex items-center justify-between border-t border-zinc-900 pt-4">
+                        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Principal_Base</p>
+                        <p className="text-sm font-bold text-zinc-300 font-mono tracking-tighter">¥{Math.floor((input.initialAsset + input.monthlyInvestment * 12 * input.years) / 10000).toLocaleString()}w</p>
+                    </div>
                 </div>
 
-                <div className={`bg-white border ${isTargetReached ? 'border-emerald-100' : 'border-rose-100'} rounded-[2.5rem] p-8 relative overflow-hidden shadow-sm`}>
-                    <div className="absolute top-0 right-0 p-6 opacity-5">
-                        <Target size={80} className={isTargetReached ? "text-emerald-500" : "text-rose-500"} />
+                <div className={`glass-card-cp rounded-none border-r-4 ${isTargetReached ? 'border-cp-cyan' : 'border-cp-yellow'} p-8 relative overflow-hidden group`}>
+                    <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <Target size={80} className={isTargetReached ? "text-cp-cyan" : "text-cp-yellow"} />
                     </div>
-                    <p className="text-gray-700 font-bold text-sm mb-2 whitespace-nowrap tracking-wider">目標達成状況</p>
+                    <p className={`font-black text-[10px] mb-2 uppercase tracking-[0.2em] ${isTargetReached ? 'text-cp-cyan neon-text-cyan' : 'text-cp-yellow neon-text-yellow'}`}>Objective_Status</p>
                     {isTargetReached ? (
-                        <div className="mt-2 text-emerald-600">
-                            <p className="text-3xl font-bold whitespace-nowrap mb-2">
-                                {result.targetReachYear}年目で達成🎉
+                        <div className="mt-2 text-cp-cyan">
+                            <p className="text-3xl font-black uppercase tracking-tighter mb-2 glitch-hover">
+                                Reached_at {result.targetReachYear}Y
                             </p>
-                            <p className="text-sm text-gray-700 leading-relaxed font-medium">素晴らしいペースです。このまま継続し、次のフェーズを目指しましょう。</p>
+                            <p className="text-xs text-zinc-400 leading-relaxed font-bold uppercase tracking-wide">Excellent progression detected. Stabilize and expand.</p>
                         </div>
                     ) : (
-                        <div className="mt-2 text-rose-600">
-                            <p className="text-3xl font-bold whitespace-nowrap mb-2">
-                                目標未達
+                        <div className="mt-2 text-cp-yellow">
+                            <p className="text-3xl font-black uppercase tracking-tighter mb-2 glitch-hover">
+                                Target_Unreached
                             </p>
-                            <div className="bg-rose-50 border border-rose-100 p-4 rounded-2xl text-sm flex flex-col gap-2">
-                                <span className="flex items-center gap-1.5 text-rose-600 font-bold"><AlertCircle size={16} /> 代替シナリオ提案</span>
-                                <span className="text-rose-700/80 font-medium">目標に到達するには毎月 <strong>{Math.ceil(requiredMonthly / 1000).toLocaleString()}千円</strong> の積立が目安となります。</span>
+                            <div className="mt-4 bg-cp-yellow/5 border-l-2 border-cp-yellow p-4 text-[10px] flex flex-col gap-2 font-mono uppercase">
+                                <span className="flex items-center gap-1.5 text-cp-yellow font-black"><AlertCircle size={14} /> System_Counter_Proposal</span>
+                                <span className="text-zinc-300 leading-relaxed">Increment contrib by <br/><strong className="text-cp-yellow text-sm">¥{Math.ceil(requiredMonthly / 1000).toLocaleString()}k</strong> p/month to align.</span>
                             </div>
                         </div>
                     )}
@@ -95,65 +96,66 @@ export default function Results({
             </div>
 
             {/* Chart */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-8 shadow-2xl">
-                <h3 className="text-lg font-bold text-zinc-100 mb-6 flex items-center gap-2">
-                    <span className="w-2 h-6 bg-blue-500 rounded-full inline-block"></span>
-                    資産推移シミュレーション
+            <div className="glass-card-cp rounded-none border border-zinc-900 p-6 md:p-8 bg-black/40 relative">
+                <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-cp-cyan/20" />
+                <h3 className="text-sm font-black text-white mb-8 flex items-center gap-2 uppercase tracking-[0.3em]">
+                    <span className="w-1.5 h-6 bg-cp-cyan shadow-[0_0_8px_var(--cp-cyan)] inline-block"></span>
+                    Asset_Projection_Flow
                 </h3>
                 <div className="h-72 sm:h-80 w-full ml-[-20px] sm:ml-0">
                     <ResponsiveContainer width="100%" height="100%">
                         <AreaChart data={result.yearlyData} margin={{ top: 10, right: 10, left: 20, bottom: 0 }}>
                             <defs>
                                 <linearGradient id="colorAmount" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#2dd4bf" stopOpacity={0.4} />
-                                    <stop offset="95%" stopColor="#2dd4bf" stopOpacity={0} />
+                                    <stop offset="5%" stopColor="#00FFFF" stopOpacity={0.5} />
+                                    <stop offset="95%" stopColor="#00FFFF" stopOpacity={0} />
                                 </linearGradient>
                                 <linearGradient id="colorPrincipal" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#94a3b8" stopOpacity={0.2} />
-                                    <stop offset="95%" stopColor="#94a3b8" stopOpacity={0} />
+                                    <stop offset="5%" stopColor="#FF00FF" stopOpacity={0.2} />
+                                    <stop offset="95%" stopColor="#FF00FF" stopOpacity={0} />
                                 </linearGradient>
                             </defs>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#27272a" vertical={false} />
-                            <XAxis dataKey="year" stroke="#71717a" tick={{ fill: '#71717a', fontSize: 12 }} tickMargin={10} minTickGap={20} axisLine={false} tickLine={false} />
-                            <YAxis yAxisId="left" stroke="#71717a" tick={{ fill: '#71717a', fontSize: 12 }} tickFormatter={formatYAxis} width={60} axisLine={false} tickLine={false} />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#18181b" vertical={false} />
+                            <XAxis dataKey="year" stroke="#3f3f46" tick={{ fill: '#71717a', fontSize: 10, fontWeight: 'bold' }} tickMargin={10} minTickGap={20} axisLine={false} tickLine={false} />
+                            <YAxis yAxisId="left" stroke="#3f3f46" tick={{ fill: '#71717a', fontSize: 10, fontWeight: 'bold' }} tickFormatter={formatYAxis} width={60} axisLine={false} tickLine={false} />
                             <Tooltip content={<CustomTooltip />} />
-                            <Area yAxisId="left" type="monotone" dataKey="amount" stroke="#3b82f6" strokeWidth={3} fillOpacity={1} fill="url(#colorAmount)" activeDot={{ r: 6, strokeWidth: 0, fill: '#60a5fa' }} />
-                            <Area yAxisId="left" type="monotone" dataKey="principal" stroke="#71717a" strokeWidth={2} strokeDasharray="5 5" fillOpacity={1} fill="url(#colorPrincipal)" activeDot={false} />
+                            <Area yAxisId="left" type="monotone" dataKey="amount" stroke="#00FFFF" strokeWidth={3} fillOpacity={1} fill="url(#colorAmount)" activeDot={{ r: 6, strokeWidth: 0, fill: '#00FFFF' }} />
+                            <Area yAxisId="left" type="monotone" dataKey="principal" stroke="#FF00FF" strokeWidth={1} strokeDasharray="5 5" fillOpacity={1} fill="url(#colorPrincipal)" activeDot={false} />
                         </AreaChart>
                     </ResponsiveContainer>
                 </div>
             </div>
 
             {/* 10 Year Table & Events */}
-            <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 shadow-sm">
-                <h3 className="text-xl font-bold text-foreground mb-8 flex items-center gap-3">
-                    <Clock size={24} className="text-accent-teal" /> 10年ごとのマイルストーン
+            <div className="glass-card-cp rounded-none border border-zinc-900 p-8">
+                <h3 className="text-sm font-black text-white mb-10 flex items-center gap-3 uppercase tracking-[0.3em]">
+                    <Clock size={20} className="text-cp-cyan neon-text-cyan" /> Epoch_Milestones
                 </h3>
                 <div className="w-full">
                     {/* Desktop View */}
                     <table className="hidden md:table w-full text-left border-collapse">
                         <thead>
-                            <tr className="border-b border-gray-100 text-gray-600 text-sm">
-                                <th className="py-4 px-4 font-bold w-24 tracking-wider">経過年</th>
-                                <th className="py-4 px-4 font-bold w-32 tracking-wider">予想資産</th>
-                                <th className="py-4 px-4 font-bold tracking-wider">歴史的イベント例</th>
+                            <tr className="border-b border-zinc-900 text-zinc-500 text-[10px] uppercase font-black tracking-widest">
+                                <th className="py-4 px-6 w-32">Epoch</th>
+                                <th className="py-4 px-6 w-40">Obj_Value</th>
+                                <th className="py-4 px-6">Historical_Context</th>
                             </tr>
                         </thead>
                         <tbody>
                             {[result.yearlyData[0], ...decadesData].map((d, i) => {
                                 const eventInfo = i > 0 ? displayedEvents[i - 1].event : null;
                                 return (
-                                    <tr key={d.year} className="border-b border-gray-100 hover:bg-gray-50 transition-colors group">
-                                        <td className="py-5 px-4 font-mono text-gray-500 font-medium">{d.year}年目</td>
-                                        <td className="py-5 px-4 font-bold text-blue-600 font-mono text-lg">{Math.floor(d.amount / 10000).toLocaleString()}万円</td>
-                                        <td className="py-5 px-4">
+                                    <tr key={d.year} className="border-b border-zinc-900/50 hover:bg-white/[0.02] transition-colors group">
+                                        <td className="py-6 px-6 font-mono text-zinc-400 font-black text-sm uppercase tracking-tighter">{d.year}Y</td>
+                                        <td className="py-6 px-6 font-black text-cp-cyan font-mono text-xl tracking-tighter">¥{Math.floor(d.amount / 10000).toLocaleString()}w</td>
+                                        <td className="py-6 px-6">
                                             {eventInfo ? (
-                                                <div className="opacity-90 group-hover:opacity-100 transition-opacity">
-                                                    <span className="text-sm font-bold text-white bg-gray-600 px-2 py-1 rounded inline-block mb-2">{eventInfo.title} ({eventInfo.year}年)</span>
-                                                    <p className="text-sm text-gray-600">{eventInfo.description}</p>
+                                                <div className="opacity-80 group-hover:opacity-100 transition-opacity">
+                                                    <span className="text-[10px] font-black text-black bg-cp-cyan px-2 py-0.5 rounded-sm inline-block mb-2 uppercase tracking-tighter">{eventInfo.title}</span>
+                                                    <p className="text-sm text-zinc-400 leading-relaxed max-w-lg italic">{eventInfo.description}</p>
                                                 </div>
                                             ) : (
-                                                <span className="text-gray-500 text-sm italic">- シミュレーション開始 -</span>
+                                                <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">// ARCHIVE_INIT</span>
                                             )}
                                         </td>
                                     </tr>
@@ -163,23 +165,24 @@ export default function Results({
                     </table>
 
                     {/* Mobile View */}
-                    <div className="md:hidden flex flex-col gap-4">
+                    <div className="md:hidden flex flex-col gap-6">
                         {[result.yearlyData[0], ...decadesData].map((d, i) => {
                             const eventInfo = i > 0 ? displayedEvents[i - 1].event : null;
                             return (
-                                <div key={d.year} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col gap-4">
-                                    <div className="flex justify-between items-center border-b border-gray-200 pb-3">
-                                        <span className="font-sans text-gray-700 font-bold text-sm tracking-widest">{d.year}年目</span>
-                                        <span className="font-bold text-accent-teal font-sans text-2xl">{Math.floor(d.amount / 10000).toLocaleString()}万円</span>
+                                <div key={d.year} className="bg-black/40 border border-zinc-900 p-6 flex flex-col gap-4 relative">
+                                    <div className="absolute top-0 right-0 p-2 text-[10px] font-mono text-zinc-800 tracking-tighter italic">LOG_{d.year}Y</div>
+                                    <div className="flex justify-between items-center border-b border-zinc-900 pb-4">
+                                        <span className="font-black text-zinc-500 text-xs uppercase tracking-widest">{d.year}Y</span>
+                                        <span className="font-black text-cp-cyan font-sans text-2xl tracking-tighter">¥{Math.floor(d.amount / 10000).toLocaleString()}w</span>
                                     </div>
-                                    <div className="pt-1">
+                                    <div className="pt-2">
                                         {eventInfo ? (
                                             <div>
-                                                <span className="text-xs font-bold text-white bg-gray-600 px-2 py-1 rounded inline-block mb-1.5">{eventInfo.title} ({eventInfo.year}年)</span>
-                                                <p className="text-xs text-gray-600 leading-relaxed">{eventInfo.description}</p>
+                                                <span className="text-[10px] font-black text-black bg-cp-cyan px-2 py-0.5 rounded-sm inline-block mb-2 uppercase tracking-tighter">{eventInfo.title}</span>
+                                                <p className="text-xs text-zinc-400 leading-relaxed italic">{eventInfo.description}</p>
                                             </div>
                                         ) : (
-                                            <span className="text-gray-500 text-xs italic">- シミュレーション開始 -</span>
+                                            <span className="text-zinc-700 text-[10px] font-black uppercase tracking-widest italic">// ARCHIVE_INIT</span>
                                         )}
                                     </div>
                                 </div>
@@ -190,68 +193,73 @@ export default function Results({
             </div>
 
             {/* MBTI x Phase Advice Area */}
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-8">
                 {/* Phase Action */}
-                <div className="bg-gradient-to-br from-indigo-950 to-blue-950 border border-indigo-500/50 rounded-3xl p-6 md:p-10 relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity duration-700 blur-[2px]">
-                        <ShieldCheck size={160} />
+                <div className="glass-card-cp rounded-none border-l-4 border-cp-violet p-8 md:p-12 relative overflow-hidden group">
+                    <div className="absolute top-[-20%] right-[-10%] opacity-10 group-hover:opacity-20 transition-opacity duration-1000 transform group-hover:scale-110">
+                        <ShieldCheck size={280} className="text-cp-violet" />
                     </div>
-                    <div className="relative z-10">
-                        <span className="px-3 py-1 rounded-full bg-indigo-500/40 text-indigo-100 text-xs font-bold border border-indigo-400/50 mb-6 inline-block tracking-wider">
-                            現在のフェーズ: {currentPhase.name}
+                    <div className="relative z-10 max-w-3xl">
+                        <span className="px-3 py-1 bg-cp-violet/20 text-cp-violet text-[10px] font-black border border-cp-violet/40 mb-8 inline-block tracking-[0.3em] uppercase">
+                            Operational_Phase: {currentPhase.name}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight drop-shadow-sm">{currentPhase.strategy}</h3>
-                        <p className="text-indigo-100 text-lg mb-6 font-bold">{currentPhase.priority}</p>
-                        <div className="bg-black/40 p-5 rounded-2xl border border-white/10 backdrop-blur-md">
-                            <p className="text-sm md:text-base text-zinc-100 leading-relaxed font-medium">{currentPhase.description}</p>
+                        <h3 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-none italic glitch-hover">
+                            {currentPhase.strategy}
+                        </h3>
+                        <p className="text-cp-violet text-lg md:text-xl mb-8 font-black uppercase tracking-widest neon-text-fuchsia">{currentPhase.priority}</p>
+                        <div className="bg-black/60 p-8 border border-zinc-900 backdrop-blur-xl">
+                            <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-bold tracking-tight">{currentPhase.description}</p>
                         </div>
                     </div>
                 </div>
 
                 {/* MBTI Advice */}
                 {mbtiProfile && (
-                    <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 md:p-12 shadow-sm relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-teal/5 blur-[100px] rounded-full pointer-events-none"></div>
-                        <div className="flex flex-col lg:flex-row lg:items-stretch justify-between gap-10 relative z-10">
+                    <div className="glass-card-cp rounded-none border-t border-zinc-800 p-8 md:p-14 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-cp-cyan/5 blur-[120px] rounded-full pointer-events-none translate-x-32 -translate-y-32"></div>
+                        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-12 relative z-10">
                             <div className="lg:w-2/3">
-                                <span className="px-4 py-1.5 rounded-full bg-accent-teal/10 text-accent-teal text-xs font-bold border border-accent-teal/20 mb-8 inline-block tracking-widest whitespace-nowrap">
-                                    投資タイプ: {mbtiProfile.type} ({mbtiProfile.name})
+                                <span className="px-4 py-2 bg-cp-cyan/10 text-cp-cyan text-[10px] font-black border border-cp-cyan/30 mb-10 inline-block tracking-[0.4em] uppercase">
+                                    Subject_Archetype: {mbtiProfile.type} // {mbtiProfile.name}
                                 </span>
-                                <h3 className="text-3xl font-bold text-foreground mb-8">あなた専用の行動提案</h3>
-                                <div className="space-y-6">
-                                    <div className="flex flex-col sm:flex-row gap-6">
-                                        <div className="flex-1 bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                                            <p className="text-xs text-gray-600 mb-3 font-bold tracking-widest">STRENGTH</p>
-                                            <p className="text-lg font-bold text-accent-teal">{mbtiProfile.strength}</p>
+                                <h3 className="text-4xl font-black text-white mb-10 uppercase tracking-tighter italic">Tactical_Adjustment</h3>
+                                <div className="space-y-8">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                        <div className="bg-black/40 p-6 border border-zinc-900 relative">
+                                            <div className="absolute top-2 left-2 w-2 h-2 bg-cp-cyan shadow-[0_0_5px_var(--cp-cyan)]" />
+                                            <p className="text-[10px] text-zinc-500 mb-4 font-black tracking-widest uppercase">System_Strengths</p>
+                                            <p className="text-xl font-black text-cp-cyan tracking-tighter uppercase">{mbtiProfile.strength}</p>
                                         </div>
-                                        <div className="flex-1 bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                                            <p className="text-xs text-gray-600 mb-3 font-bold tracking-widest">WEAKNESS</p>
-                                            <p className="text-lg font-bold text-rose-500">{mbtiProfile.weakness}</p>
+                                        <div className="bg-black/40 p-6 border border-zinc-900 relative">
+                                            <div className="absolute top-2 left-2 w-2 h-2 bg-cp-fuchsia shadow-[0_0_5px_var(--cp-fuchsia)]" />
+                                            <p className="text-[10px] text-zinc-500 mb-4 font-black tracking-widest uppercase">Risk_Vector</p>
+                                            <p className="text-xl font-black text-cp-fuchsia tracking-tighter uppercase">{mbtiProfile.weakness}</p>
                                         </div>
                                     </div>
-                                    <div className="bg-gradient-to-r from-accent-teal/10 to-teal-50 border border-accent-teal/20 p-8 rounded-3xl mt-6">
-                                        <p className="text-xs text-accent-teal mb-3 font-bold tracking-widest uppercase">Next Action</p>
-                                        <p className="text-2xl md:text-3xl font-black text-foreground">{mbtiProfile.action}</p>
+                                    <div className="bg-gradient-to-r from-cp-cyan/20 to-transparent border-l-4 border-cp-cyan p-8 mt-10">
+                                        <p className="text-[10px] text-cp-cyan mb-4 font-black tracking-widest uppercase glow-text-cyan underline decoration-cp-cyan/30 underline-offset-4">Directive_Next_Action</p>
+                                        <p className="text-2xl md:text-4xl font-black text-white tracking-tighter italic uppercase leading-tight">{mbtiProfile.action}</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="lg:w-1/3 bg-gray-50/50 p-10 rounded-[2rem] border border-gray-100 flex flex-col justify-center relative shadow-inner">
-                                <div className="absolute top-6 left-6 text-6xl text-gray-200 font-serif opacity-50 select-none">“</div>
-                                <div className="absolute bottom-6 right-6 text-6xl text-gray-200 font-serif opacity-50 select-none">”</div>
-                                <p className="text-xs text-gray-600 mb-6 font-bold tracking-widest text-center uppercase">Perspective Shift</p>
-                                <p className="text-foreground font-bold text-center text-lg leading-relaxed relative z-10 italic">
-                                    {mbtiProfile.perspectiveShift}
+                            <div className="lg:w-1/3 bg-black/40 p-10 border border-zinc-900 flex flex-col justify-center relative shadow-2xl mt-10 lg:mt-0">
+                                <div className="absolute top-4 left-4 text-4xl text-zinc-800 font-mono opacity-50 select-none">/ *</div>
+                                <div className="absolute bottom-4 right-4 text-4xl text-zinc-800 font-mono opacity-50 select-none">* /</div>
+                                <p className="text-[10px] text-zinc-600 mb-8 font-black tracking-[0.3em] text-center uppercase">// Perspective_Shift</p>
+                                <p className="text-zinc-100 font-bold text-center text-lg leading-relaxed relative z-10 italic font-medium">
+                                    "{mbtiProfile.perspectiveShift}"
                                 </p>
                             </div>
                         </div>
 
-                        <div className="mt-12 text-center sm:text-right">
+                        <div className="mt-16 text-center lg:text-right">
                             <a
                                 href="https://toushi-shindan.vercel.app/"
-                                className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-accent-teal transition-all bg-gray-100 hover:bg-white border border-transparent hover:border-accent-teal/20 px-6 py-3 rounded-full font-bold shadow-sm"
+                                className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-cyan px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
                             >
-                                投資診断をやり直す
+                                <span className="group-hover:neon-text-cyan transition-all">RE_INITIALIZE_DIAGNOSTIC</span>
+                                <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-cyan transition-all" />
                             </a>
                         </div>
                     </div>

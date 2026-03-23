@@ -48,42 +48,43 @@ export default function SimulateClient({
     const result = useMemo(() => calculateForward(input), [input]);
 
     return (
-        <div className="flex flex-col gap-12 md:gap-16 pb-12 md:pb-20">
+        <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-24 scanlines min-h-screen">
             <header className="w-full relative">
                 <h1 className="sr-only">つむぎの資産運用シミュレーション</h1>
                 {/* 画面端まで広がるヒーローイラスト */}
-                <div className="w-full">
+                <div className="w-full relative">
                     <Image
                         src="/hero-illustration.png"
                         alt="つむぎの資産運用シミュレーション"
                         width={1920}
                         height={1080}
                         priority
-                        className="w-full h-auto object-cover drop-shadow-2xl"
+                        className="w-full h-auto object-cover"
                         unoptimized
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 </div>
 
                 {/* コピー＆CTAボタン (既存の幅制限を適用) */}
-                <div className="max-w-6xl mx-auto px-4 text-center mt-8 md:mt-12">
-                    <p className="text-gray-700 text-lg md:text-xl font-bold tracking-tight mb-8">
+                <div className="max-w-6xl mx-auto px-4 text-center mt-[-40px] md:mt-[-80px] relative z-20">
+                    <p className="text-white text-xl md:text-3xl font-black tracking-tighter mb-10 uppercase neon-text-fuchsia italic">
                         まずは現実を知る。そして、未来をデザインする。
                     </p>
-                    <div className="flex flex-col items-center gap-6 w-full z-20 relative">
+                    <div className="flex flex-col items-center gap-8 w-full">
                         {/* サービス詳細LPへのリンク */}
                         <a 
                             href="https://tumugi-lp.vercel.app" 
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative flex items-center justify-center w-[90%] max-w-[500px] h-[72px] rounded-full overflow-hidden bg-gradient-to-r from-accent-teal to-[#4ade80] p-[2.5px] transition-all duration-500 hover:scale-[1.03] active:scale-[0.98] shadow-[0_10px_30px_-10px_rgba(45,212,191,0.4)]"
-                            style={{ transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)" }}
+                            className="group relative flex items-center justify-center w-[90%] max-w-[500px] h-[72px] bg-black border-2 border-cp-cyan overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(0,255,255,0.4)]"
                         >
-                            <div className="flex items-center justify-center w-full h-full bg-white rounded-full transition-all duration-500 group-hover:bg-transparent px-8">
-                                <span className="text-accent-teal group-hover:text-white font-black text-lg md:text-xl transition-colors tracking-wider">
-                                    つむぎのサービス詳細を見る
+                            <div className="absolute inset-0 bg-cp-cyan translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                            <div className="flex items-center justify-center relative z-10 px-8">
+                                <span className="text-cp-cyan group-hover:text-black font-black text-lg md:text-xl transition-colors tracking-widest uppercase">
+                                    VIEW PROJECT_DETAILS
                                 </span>
-                                <div className="ml-3 w-6 h-6 flex items-center justify-center rounded-full bg-accent-teal group-hover:bg-white text-white group-hover:text-accent-teal transition-all duration-500 shadow-sm">
-                                    <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-3.5 h-3.5">
+                                <div className="ml-4 w-6 h-6 flex items-center justify-center bg-cp-cyan group-hover:bg-black text-black group-hover:text-cp-cyan transition-all duration-300">
+                                    <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-4 h-4">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                     </svg>
                                 </div>
@@ -92,15 +93,14 @@ export default function SimulateClient({
 
                         {/* 既存の診断サイトへの戻りボタン */}
                         <a href="https://toushi-shindan.vercel.app/"
-                            className="group relative block w-[90%] max-w-[500px] transition-transform duration-500 hover:scale-[1.03] active:scale-95 cursor-pointer"
-                            style={{ transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)" }}>
+                            className="group relative block w-[90%] max-w-[500px] transition-transform duration-500 hover:scale-[1.05] active:scale-95 cursor-pointer">
                             {/* デフォルト画像 (通常時表示) */}
                             <Image
                                 src="/cta-button-off.png"
                                 alt="投資診断サイトへ戻る"
                                 width={1000}
                                 height={250}
-                                className="w-full h-auto drop-shadow-xl absolute top-0 left-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                                className="w-full h-auto brightness-150 absolute top-0 left-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                                 unoptimized
                             />
                             {/* ホバー時画像 (ホバー時のみ表示) */}
@@ -109,7 +109,7 @@ export default function SimulateClient({
                                 alt="投資診断サイトへ戻る"
                                 width={1000}
                                 height={250}
-                                className="w-full h-auto drop-shadow-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 relative"
+                                className="w-full h-auto brightness-150 transition-opacity duration-300 opacity-0 group-hover:opacity-100 relative"
                                 unoptimized
                             />
                         </a>
@@ -117,12 +117,13 @@ export default function SimulateClient({
                 </div>
             </header>
 
-            <div className="max-w-6xl mx-auto px-4 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                    <div className="lg:col-span-4 rounded-[2.5rem] bg-white/80 backdrop-blur-xl border border-white/30 p-8 md:p-10 shadow-xl relative lg:sticky lg:top-8 z-10 glass-card">
+            <div className="max-w-6xl mx-auto px-4 w-full relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                    <div className="lg:col-span-4 glass-card-cp p-8 md:p-10 shadow-2xl relative lg:sticky lg:top-8 z-10 border-t-2 border-cp-fuchsia/40">
+                        <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-cp-fuchsia" />
                         <InputForm input={input} onChange={setInput} />
                     </div>
-                    <div className="lg:col-span-8 flex flex-col gap-8">
+                    <div className="lg:col-span-8 flex flex-col gap-10">
                         <Results input={input} result={result} mbti={mbti} />
                     </div>
                 </div>

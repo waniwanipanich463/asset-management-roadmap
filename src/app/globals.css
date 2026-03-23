@@ -1,32 +1,107 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f9fa;
-  --foreground: #1a2b4c;
-  --accent-teal: #2dd4bf;
-  --accent-gold: #f59e0b;
-  --soft-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --cp-fuchsia: #FF00FF;
+  --cp-violet: #9400D3;
+  --cp-blue: #1E90FF;
+  --cp-cyan: #00FFFF;
+  --cp-yellow: #FFD700;
+  --cp-bg: #050505;
+  --cp-bg-deep: #0a0a14;
+  --background: var(--cp-bg);
+  --foreground: #ffffff;
+  --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
+  --soft-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
+  --color-cp-fuchsia: var(--cp-fuchsia);
+  --color-cp-violet: var(--cp-violet);
+  --color-cp-blue: var(--cp-blue);
+  --color-cp-cyan: var(--cp-cyan);
+  --color-cp-yellow: var(--cp-yellow);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent-teal: var(--accent-teal);
-  --color-accent-gold: var(--accent-gold);
-  --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
+  --font-sans: var(--font-sans);
 }
 
 body {
-  background: radial-gradient(circle at center, #ffffff 0%, #f0f4f8 100%);
+  background: radial-gradient(circle at center, #0f0c29 0%, #000000 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Base styles for cards and buttons to be used with Tailwind */
-.glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: var(--soft-shadow);
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(32, 255, 255, 0.05) 25%, rgba(32, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(32, 255, 255, 0.05) 75%, rgba(32, 255, 255, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(32, 255, 255, 0.05) 25%, rgba(32, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(32, 255, 255, 0.05) 75%, rgba(32, 255, 255, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glass-card-cp {
+  background: rgba(10, 10, 20, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.1), inset 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+.neon-border-fuchsia {
+  border: 1px solid var(--cp-fuchsia);
+  box-shadow: 0 0 10px var(--cp-fuchsia), inset 0 0 5px var(--cp-fuchsia);
+}
+
+.neon-border-cyan {
+  border: 1px solid var(--cp-cyan);
+  box-shadow: 0 0 10px var(--cp-cyan), inset 0 0 5px var(--cp-cyan);
+}
+
+.neon-text-fuchsia {
+  text-shadow: 0 0 8px var(--cp-fuchsia), 0 0 12px var(--cp-fuchsia);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 8px var(--cp-cyan), 0 0 12px var(--cp-cyan);
+}
+
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 2;
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.2s cubic-bezier(.25,.46,.45,.94) both infinite;
 }

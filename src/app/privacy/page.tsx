@@ -54,7 +54,7 @@ export default function PrivacyPage() {
         },
         {
             title: "8. 個人情報の開示・訂正・削除",
-            content: "ご本人からの個人情報の開示・訂正・削除のご請求があった場合、適切に対応いたします。お問い合わせ先：example@example.com"
+            content: "ご本人からの個人情報の開示・訂正・削除のご請求があった場合、適切に対応いたします。お問い合わせ先：money.revenge001@gmail.com"
         },
         {
             title: "9. 未成年の利用について",
@@ -67,47 +67,62 @@ export default function PrivacyPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-black text-zinc-300 font-sans">
-            <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
+        <div className="min-h-screen bg-transparent text-zinc-100 font-sans scanlines">
+            <div className="max-w-4xl mx-auto px-6 py-16 md:py-24 relative z-10">
                 {/* Back Link */}
                 <Link
                     href="/simulate"
-                    className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors mb-12 group"
+                    className="inline-flex items-center gap-2 text-cp-cyan hover:text-white transition-all mb-12 group neon-text-cyan"
                 >
                     <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                    <span>シミュレーションに戻る</span>
+                    <span className="font-bold tracking-widest uppercase">BACK TO NODE</span>
                 </Link>
 
-                <header className="mb-16">
-                    <div className="flex items-center gap-3 mb-4 text-emerald-400">
-                        <Lock className="w-8 h-8 md:w-10 md:h-10" />
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-                            プライバシーポリシー
+                <header className="mb-20 relative">
+                    <div className="absolute -left-4 top-0 w-1 h-14 bg-cp-cyan shadow-[0_0_15px_var(--cp-cyan)]" />
+                    <div className="flex items-center gap-4 mb-6 text-cp-cyan neon-text-cyan">
+                        <Lock className="w-10 h-10" />
+                        <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase glitch-hover">
+                            Privacy <span className="text-cp-cyan">Protocol</span>
                         </h1>
                     </div>
-                    <p className="text-zinc-500 text-lg">
-                        資産運用シミュレーション（以下、「当サイト」といいます。）は、個人情報の保護に関する法律に基づき、以下の通りプライバシーポリシーを定めます。
+                    <p className="text-zinc-400 text-lg max-w-2xl border-l-2 border-cp-cyan/30 pl-6 leading-relaxed">
+                        資産運用シミュレーション（以下、「当サイト」）における個人情報の処理および保護に関するプロトコルを定義します。
                     </p>
                 </header>
 
-                <div className="space-y-12">
+                <div className="grid grid-cols-1 gap-8">
                     {sections.map((section, index) => (
-                        <section key={index} className="space-y-4">
-                            <h2 className="text-xl font-bold text-white border-b border-zinc-800 pb-3">
+                        <section key={index} className="glass-card-cp p-8 relative group hover:border-cp-cyan/50 transition-colors">
+                            <div className="absolute top-0 right-0 p-2 text-[10px] font-mono text-cp-cyan/20">
+                                SECTION_ID: {index + 1}
+                            </div>
+                            <h2 className="text-xl font-black text-white mb-6 uppercase tracking-widest flex items-center gap-2">
+                                <span className="w-2 h-2 bg-cp-cyan" />
                                 {section.title}
                             </h2>
-                            <p className="text-zinc-400 leading-relaxed">
-                                {section.content}
-                            </p>
-                            {section.list && (
-                                <ul className="list-disc list-inside space-y-2 text-zinc-400 ml-2">
-                                    {section.list.map((item, i) => (
-                                        <li key={i}>{item}</li>
-                                    ))}
-                                </ul>
-                            )}
+                            <div className="space-y-4">
+                                <p className="text-zinc-300 leading-relaxed font-medium">
+                                    {section.content}
+                                </p>
+                                {section.list && (
+                                    <ul className="space-y-3 ml-4">
+                                        {section.list.map((item, i) => (
+                                            <li key={i} className="flex items-start gap-3 text-zinc-400">
+                                                <span className="text-cp-cyan font-bold">•</span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
                         </section>
                     ))}
+                </div>
+
+                {/* Decorative Footer Element */}
+                <div className="mt-20 flex justify-center opacity-20">
+                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-cp-cyan to-transparent" />
                 </div>
             </div>
         </div>
