@@ -76,7 +76,7 @@ export default function Results({
                     <p className={`font-black text-[10px] mb-2 uppercase tracking-[0.2em] ${isTargetReached ? 'text-cp-cyan neon-text-cyan' : 'text-cp-yellow neon-text-yellow'}`}>目標達成状況</p>
                     {isTargetReached ? (
                         <div className="mt-2 text-cp-cyan">
-                            <p className="text-3xl font-black uppercase tracking-tighter mb-2 glitch-hover">
+                            <p className="text-3xl font-black uppercase tracking-tighter mb-2">
                                 達成まで {result.targetReachYear}年
                             </p>
                             <p className="text-xs text-zinc-400 leading-relaxed font-bold uppercase tracking-wide">順調な資産形成。このまま継続しましょう。</p>
@@ -203,7 +203,7 @@ export default function Results({
                         <span className="px-3 py-1 bg-cp-violet/20 text-cp-violet text-[10px] font-black border border-cp-violet/40 mb-8 inline-block tracking-[0.3em] uppercase">
                             運用フェーズ: {currentPhase.name}
                         </span>
-                        <h3 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-none italic glitch-hover">
+                        <h3 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-none italic">
                             {currentPhase.strategy}
                         </h3>
                         <p className="text-cp-violet text-lg md:text-xl mb-8 font-black uppercase tracking-widest neon-text-fuchsia">{currentPhase.priority}</p>

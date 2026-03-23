@@ -5,7 +5,7 @@ import Image from "next/image";
 import { calculateForward, SimulationInput } from "@/utils/simulation";
 import InputForm from "./InputForm";
 import Results from "./Results";
-import YouTubePopup from "./YouTubePopup";
+import YouTubeDrawer from "./YouTubeDrawer";
 import mbtiData from "@/data/mbti.json";
 
 const bgImages = ["/haikei01.png", "/haikei02.png", "/haikei03.png", "/haikei04.png"];
@@ -155,7 +155,7 @@ export default function SimulateClient({
                 </div>
             </div>
 
-            <YouTubePopup />
+            <YouTubeDrawer />
         </div>
     );
 }
