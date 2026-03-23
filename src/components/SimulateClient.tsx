@@ -58,8 +58,8 @@ export default function SimulateClient({
     const result = useMemo(() => calculateForward(input), [input]);
 
     return (
-        <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-24 scanlines min-h-screen">
-            <header className="w-full relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
+        <div className="flex flex-col pb-12 md:pb-24 scanlines min-h-screen">
+            <header className="w-full relative min-h-[500px] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
                 <h1 className="sr-only">つむぎの資産運用シミュレーション</h1>
 
                 {/* 背景スライドショー */}
@@ -73,7 +73,7 @@ export default function SimulateClient({
                                 src={src}
                                 alt=""
                                 fill
-                                className="object-cover"
+                                className="object-cover object-top"
                                 priority={index === 0}
                                 unoptimized
                             />
