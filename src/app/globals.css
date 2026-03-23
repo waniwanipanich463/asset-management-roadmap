@@ -102,6 +102,18 @@ body::before {
   100% { transform: translate(0); }
 }
 
+@keyframes glitch-loop {
+  0% { transform: translate(0); opacity: 1; }
+  2% { transform: translate(-3px, 1px); opacity: 0.9; }
+  4% { transform: translate(3px, -1px); opacity: 1; }
+  6% { transform: translate(0); }
+  100% { transform: translate(0); }
+}
+
+.animate-glitch {
+  animation: glitch-loop 3s infinite;
+}
+
 .glitch-hover:hover {
   animation: glitch 0.2s cubic-bezier(.25,.46,.45,.94) both infinite;
 }
