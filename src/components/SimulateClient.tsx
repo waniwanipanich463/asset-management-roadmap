@@ -79,9 +79,9 @@ export default function SimulateClient({
                             />
                         </div>
                     ))}
-                    {/* グラデーションオーバーレイ */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black z-10" />
-                    <div className="absolute inset-0 bg-black/30 z-10" />
+                    {/* グラデーションオーバーレイ (明るさ調整) */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 z-10" />
+                    <div className="absolute inset-0 bg-black/10 z-10" />
                 </div>
 
                 {/* タイトルロゴ (背景の上に重ねる) */}
@@ -113,7 +113,7 @@ export default function SimulateClient({
                         <div className="absolute inset-0 bg-cp-cyan translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                         <div className="flex items-center justify-center relative z-10 px-8">
                             <span className="text-cp-cyan group-hover:text-black font-black text-lg md:text-xl transition-colors tracking-widest uppercase">
-                                プロジェクトの詳細を見る
+                                資産を育てるつむぎの詳細を見る
                             </span>
                             <div className="ml-4 w-6 h-6 flex items-center justify-center bg-cp-cyan group-hover:bg-black text-black group-hover:text-cp-cyan transition-all duration-300">
                                 <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-4 h-4">
