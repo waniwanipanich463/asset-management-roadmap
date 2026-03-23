@@ -16,7 +16,7 @@ export default function Footer() {
                 
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-zinc-900 pt-8">
                     <div className="text-zinc-500 text-sm font-black tracking-[0.2em] uppercase">
-                        © 2026 <span className="text-white">TSUMUGI</span>_REVENGE_SYSTEM
+                        © 2026 つむぎ部屋
                     </div>
 
                     <nav className="flex items-center gap-10">

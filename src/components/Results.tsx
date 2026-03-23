@@ -83,7 +83,7 @@ export default function Results({
                         </div>
                     ) : (
                         <div className="mt-2 text-cp-yellow">
-                            <p className="text-3xl font-black uppercase tracking-tighter mb-2 glitch-hover">
+                            <p className="text-3xl font-black uppercase tracking-tighter mb-2">
                                 目標未達成
                             </p>
                             <div className="mt-4 bg-cp-yellow/5 border-l-2 border-cp-yellow p-4 text-[10px] flex flex-col gap-2 font-mono uppercase">
