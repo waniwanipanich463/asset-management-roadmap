@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import Image from "next/image";
 import { calculateForward, SimulationInput } from "@/utils/simulation";
 import InputForm from "./InputForm";
 import Results from "./Results";
@@ -51,22 +50,9 @@ export default function SimulateClient({
         <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-24 scanlines min-h-screen">
             <header className="w-full relative">
                 <h1 className="sr-only">つむぎの資産運用シミュレーション</h1>
-                {/* 画面端まで広がるヒーローイラスト */}
-                <div className="w-full relative">
-                    <Image
-                        src="/hero-illustration.png"
-                        alt="つむぎの資産運用シミュレーション"
-                        width={1920}
-                        height={1080}
-                        priority
-                        className="w-full h-auto object-cover"
-                        unoptimized
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-                </div>
 
                 {/* コピー＆CTAボタン (既存の幅制限を適用) */}
-                <div className="max-w-6xl mx-auto px-4 text-center mt-[-40px] md:mt-[-80px] relative z-20">
+                <div className="max-w-6xl mx-auto px-4 text-center pt-12 md:pt-20 relative z-20">
                     <p className="text-white text-xl md:text-3xl font-black tracking-tighter mb-10 uppercase neon-text-fuchsia italic">
                         まずは現実を知る。そして、未来をデザインする。
                     </p>
