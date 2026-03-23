@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import Image from "next/image";
 import { calculateForward, SimulationInput } from "@/utils/simulation";
 import InputForm from "./InputForm";
 import Results from "./Results";
 import YouTubePopup from "./YouTubePopup";
 import mbtiData from "@/data/mbti.json";
+
+const bgImages = ["/haikei01.png", "/haikei02.png", "/haikei03.png", "/haikei04.png"];
 
 export default function SimulateClient({
     initialMbti,
@@ -37,6 +40,7 @@ export default function SimulateClient({
     });
 
     const [mbti, setMbti] = useState<string | undefined>(initialMbti);
+    const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
     useEffect(() => {
         if (initialMbti && mbtiData.some(d => d.type === initialMbti)) {
@@ -44,16 +48,45 @@ export default function SimulateClient({
         }
     }, [initialMbti]);
 
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentBgIndex((prev) => (prev + 1) % bgImages.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, []);
+
     const result = useMemo(() => calculateForward(input), [input]);
 
     return (
         <div className="flex flex-col gap-12 md:gap-20 pb-12 md:pb-24 scanlines min-h-screen">
-            <header className="w-full relative">
+            <header className="w-full relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden">
                 <h1 className="sr-only">つむぎの資産運用シミュレーション</h1>
 
+                {/* 背景スライドショー */}
+                <div className="absolute inset-0 z-0">
+                    {bgImages.map((src, index) => (
+                        <div 
+                            key={src}
+                            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === currentBgIndex ? "opacity-100" : "opacity-0"}`}
+                        >
+                            <Image
+                                src={src}
+                                alt=""
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                                unoptimized
+                            />
+                        </div>
+                    ))}
+                    {/* グラデーションオーバーレイ */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black z-10" />
+                    <div className="absolute inset-0 bg-black/30 z-10" />
+                </div>
+
                 {/* コピー＆CTAボタン (既存の幅制限を適用) */}
-                <div className="max-w-6xl mx-auto px-4 text-center pt-12 md:pt-20 relative z-20">
-                    <p className="text-white text-xl md:text-3xl font-black tracking-tighter mb-10 uppercase neon-text-fuchsia italic">
+                <div className="max-w-6xl mx-auto px-4 text-center py-20 relative z-20">
+                    <p className="text-white text-xl md:text-3xl font-black tracking-tighter mb-10 uppercase neon-text-fuchsia italic drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]">
                         まずは現実を知る。そして、未来をデザインする。
                     </p>
                     <div className="flex flex-col items-center gap-8 w-full">
