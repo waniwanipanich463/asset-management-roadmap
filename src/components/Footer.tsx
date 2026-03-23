@@ -24,13 +24,13 @@ export default function Footer() {
                             href="/operator"
                             className="text-sm font-bold text-zinc-400 hover:text-cp-cyan transition-all uppercase tracking-widest hover:neon-text-cyan"
                         >
-                            Operator_Info
+                            運営主体・免責事項
                         </Link>
                         <Link
                             href="/privacy"
                             className="text-sm font-bold text-zinc-400 hover:text-cp-fuchsia transition-all uppercase tracking-widest hover:neon-text-fuchsia"
                         >
-                            Privacy_Protocol
+                            プライバシーポリシー
                         </Link>
                     </nav>
                 </div>

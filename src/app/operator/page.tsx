@@ -11,13 +11,13 @@ export default function OperatorPage() {
                     className="inline-flex items-center gap-2 text-cp-cyan hover:text-white transition-all mb-12 group neon-text-cyan"
                 >
                     <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                    <span className="font-bold tracking-widest">RETURN TO SIMULATION</span>
+                    <span className="font-bold tracking-widest">シミュレーションに戻る</span>
                 </Link>
 
                 <header className="mb-16 relative">
                     <div className="absolute -left-4 top-0 w-1 h-12 bg-cp-fuchsia shadow-[0_0_15px_var(--cp-fuchsia)]" />
                     <h1 className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter uppercase glitch-hover">
-                        Operating <span className="text-cp-fuchsia">Info</span> & <span className="text-cp-cyan">Disclaimer</span>
+                        運営主体・<span className="text-cp-fuchsia">免責事項</span>
                     </h1>
                     <div className="h-1 w-32 bg-gradient-to-r from-cp-fuchsia to-transparent" />
                 </header>
@@ -31,25 +31,25 @@ export default function OperatorPage() {
                             <h2 className="text-2xl font-black uppercase tracking-widest">運営者情報</h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-y-6 gap-x-8 text-lg">
-                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">Operator Name</div>
+                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">運営主体名</div>
                             <div className="text-white font-medium">つむぎ部屋</div>
 
-                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">Location</div>
+                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">所在地</div>
                             <div className="text-white font-medium">日本 / Virtual Space</div>
 
-                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">Contact</div>
+                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">連絡先</div>
                             <div className="text-cp-cyan font-bold hover:underline">
                                 <a href="mailto:money.revenge001@gmail.com">money.revenge001@gmail.com</a>
                             </div>
 
-                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">System URL</div>
+                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">システムURL</div>
                             <div className="text-cp-fuchsia font-bold hover:underline break-all">
                                 <a href="https://youtube.com/channel/UC2VfIGmIV_2FSB7r0fIkbKg?si=4RIJ_ZebY8oljmo4" target="_blank" rel="noopener noreferrer">
                                     https://youtube.com/channel/UC2VfIGmIV_2FSB7r0fIkbKg?si=4RIJ_ZebY8oljmo4
                                 </a>
                             </div>
 
-                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">Established</div>
+                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">設立日</div>
                             <div className="text-white font-medium">11月28日</div>
                         </div>
                     </section>

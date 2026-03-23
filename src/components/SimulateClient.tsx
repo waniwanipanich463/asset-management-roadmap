@@ -81,7 +81,7 @@ export default function SimulateClient({
                             <div className="absolute inset-0 bg-cp-cyan translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                             <div className="flex items-center justify-center relative z-10 px-8">
                                 <span className="text-cp-cyan group-hover:text-black font-black text-lg md:text-xl transition-colors tracking-widest uppercase">
-                                    VIEW PROJECT_DETAILS
+                                    プロジェクトの詳細を見る
                                 </span>
                                 <div className="ml-4 w-6 h-6 flex items-center justify-center bg-cp-cyan group-hover:bg-black text-black group-hover:text-cp-cyan transition-all duration-300">
                                     <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-4 h-4">
@@ -92,26 +92,21 @@ export default function SimulateClient({
                         </a>
 
                         {/* 既存の診断サイトへの戻りボタン */}
-                        <a href="https://toushi-shindan.vercel.app/"
-                            className="group relative block w-[90%] max-w-[500px] transition-transform duration-500 hover:scale-[1.05] active:scale-95 cursor-pointer">
-                            {/* デフォルト画像 (通常時表示) */}
-                            <Image
-                                src="/cta-button-off.png"
-                                alt="投資診断サイトへ戻る"
-                                width={1000}
-                                height={250}
-                                className="w-full h-auto brightness-150 absolute top-0 left-0 transition-opacity duration-300 opacity-100 group-hover:opacity-0"
-                                unoptimized
-                            />
-                            {/* ホバー時画像 (ホバー時のみ表示) */}
-                            <Image
-                                src="/cta-button-on.png"
-                                alt="投資診断サイトへ戻る"
-                                width={1000}
-                                height={250}
-                                className="w-full h-auto brightness-150 transition-opacity duration-300 opacity-0 group-hover:opacity-100 relative"
-                                unoptimized
-                            />
+                        <a 
+                            href="https://toushi-shindan.vercel.app/"
+                            className="group relative flex items-center justify-center w-[90%] max-w-[500px] h-[72px] bg-black border-2 border-cp-fuchsia overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(255,0,255,0.4)]"
+                        >
+                            <div className="absolute inset-0 bg-cp-fuchsia translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                            <div className="flex items-center justify-center relative z-10 px-8">
+                                <span className="text-cp-fuchsia group-hover:text-black font-black text-lg md:text-xl transition-colors tracking-widest uppercase">
+                                    投資診断をやり直す
+                                </span>
+                                <div className="ml-4 w-6 h-6 flex items-center justify-center bg-cp-fuchsia group-hover:bg-black text-black group-hover:text-cp-fuchsia transition-all duration-300 transform rotate-180">
+                                    <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-4 h-4">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </div>
                         </a>
                     </div>
                 </div>

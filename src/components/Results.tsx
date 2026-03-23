@@ -27,9 +27,9 @@ export default function Results({
         if (active && payload && payload.length) {
             return (
                 <div className="bg-black/80 border border-cp-cyan backdrop-blur-md p-4 rounded-none shadow-[0_0_15px_rgba(0,255,255,0.2)]">
-                    <p className="text-zinc-500 mb-2 font-mono text-[10px] uppercase">{`Horizon: ${label} Years`}</p>
-                    <p className="text-cp-cyan font-black text-lg mb-1">{`Asset: ${Math.floor(payload[0].value / 10000).toLocaleString()}万円`}</p>
-                    <p className="text-zinc-600 text-[10px] font-mono uppercase hidden sm:block">{`Principal: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
+                    <p className="text-zinc-500 mb-2 font-mono text-[10px] uppercase">{`運用期間: ${label} 年`}</p>
+                    <p className="text-cp-cyan font-black text-lg mb-1">{`資産合計: ${Math.floor(payload[0].value / 10000).toLocaleString()}万円`}</p>
+                    <p className="text-zinc-600 text-[10px] font-mono uppercase hidden sm:block">{`元本合計: ${Math.floor(payload[0].payload.principal / 10000).toLocaleString()}万円`}</p>
                 </div>
             );
         }
@@ -59,13 +59,13 @@ export default function Results({
                     <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity text-cp-fuchsia">
                         <TrendingUp size={80} />
                     </div>
-                    <p className="text-cp-fuchsia font-black text-[10px] mb-2 uppercase tracking-[0.2em] neon-text-fuchsia">Estimated_Output ({input.years}Y)</p>
+                    <p className="text-cp-fuchsia font-black text-[10px] mb-2 uppercase tracking-[0.2em] neon-text-fuchsia">期待運用結果 ({input.years}年)</p>
                     <p className="text-4xl lg:text-5xl font-black text-white font-sans tracking-tighter mt-2 whitespace-nowrap">
-                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-zinc-500 font-sans font-medium uppercase">JPY(w)</span>
+                        {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-zinc-500 font-sans font-medium uppercase">万円</span>
                     </p>
                     <div className="mt-6 flex items-center justify-between border-t border-zinc-900 pt-4">
-                        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Principal_Base</p>
-                        <p className="text-sm font-bold text-zinc-300 font-mono tracking-tighter">¥{Math.floor((input.initialAsset + input.monthlyInvestment * 12 * input.years) / 10000).toLocaleString()}w</p>
+                        <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">投資元本</p>
+                        <p className="text-sm font-bold text-zinc-300 font-mono tracking-tighter">¥{Math.floor((input.initialAsset + input.monthlyInvestment * 12 * input.years) / 10000).toLocaleString()}万円</p>
                     </div>
                 </div>
 
@@ -73,22 +73,22 @@ export default function Results({
                     <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                         <Target size={80} className={isTargetReached ? "text-cp-cyan" : "text-cp-yellow"} />
                     </div>
-                    <p className={`font-black text-[10px] mb-2 uppercase tracking-[0.2em] ${isTargetReached ? 'text-cp-cyan neon-text-cyan' : 'text-cp-yellow neon-text-yellow'}`}>Objective_Status</p>
+                    <p className={`font-black text-[10px] mb-2 uppercase tracking-[0.2em] ${isTargetReached ? 'text-cp-cyan neon-text-cyan' : 'text-cp-yellow neon-text-yellow'}`}>目標達成状況</p>
                     {isTargetReached ? (
                         <div className="mt-2 text-cp-cyan">
                             <p className="text-3xl font-black uppercase tracking-tighter mb-2 glitch-hover">
-                                Reached_at {result.targetReachYear}Y
+                                達成まで {result.targetReachYear}年
                             </p>
-                            <p className="text-xs text-zinc-400 leading-relaxed font-bold uppercase tracking-wide">Excellent progression detected. Stabilize and expand.</p>
+                            <p className="text-xs text-zinc-400 leading-relaxed font-bold uppercase tracking-wide">順調な資産形成。このまま継続しましょう。</p>
                         </div>
                     ) : (
                         <div className="mt-2 text-cp-yellow">
                             <p className="text-3xl font-black uppercase tracking-tighter mb-2 glitch-hover">
-                                Target_Unreached
+                                目標未達成
                             </p>
                             <div className="mt-4 bg-cp-yellow/5 border-l-2 border-cp-yellow p-4 text-[10px] flex flex-col gap-2 font-mono uppercase">
-                                <span className="flex items-center gap-1.5 text-cp-yellow font-black"><AlertCircle size={14} /> System_Counter_Proposal</span>
-                                <span className="text-zinc-300 leading-relaxed">Increment contrib by <br/><strong className="text-cp-yellow text-sm">¥{Math.ceil(requiredMonthly / 1000).toLocaleString()}k</strong> p/month to align.</span>
+                                <span className="flex items-center gap-1.5 text-cp-yellow font-black"><AlertCircle size={14} /> システム提案</span>
+                                <span className="text-zinc-300 leading-relaxed">目標達成には毎月あと <strong className="text-cp-yellow text-sm">¥{Math.ceil(requiredMonthly / 1000).toLocaleString()}千円</strong> の積み増しが必要です。</span>
                             </div>
                         </div>
                     )}
@@ -100,7 +100,7 @@ export default function Results({
                 <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-cp-cyan/20" />
                 <h3 className="text-sm font-black text-white mb-8 flex items-center gap-2 uppercase tracking-[0.3em]">
                     <span className="w-1.5 h-6 bg-cp-cyan shadow-[0_0_8px_var(--cp-cyan)] inline-block"></span>
-                    Asset_Projection_Flow
+                    資産推移予測
                 </h3>
                 <div className="h-72 sm:h-80 w-full ml-[-20px] sm:ml-0">
                     <ResponsiveContainer width="100%" height="100%">
@@ -129,16 +129,16 @@ export default function Results({
             {/* 10 Year Table & Events */}
             <div className="glass-card-cp rounded-none border border-zinc-900 p-8">
                 <h3 className="text-sm font-black text-white mb-10 flex items-center gap-3 uppercase tracking-[0.3em]">
-                    <Clock size={20} className="text-cp-cyan neon-text-cyan" /> Epoch_Milestones
+                    <Clock size={20} className="text-cp-cyan neon-text-cyan" /> 運用マイルストーン
                 </h3>
                 <div className="w-full">
                     {/* Desktop View */}
                     <table className="hidden md:table w-full text-left border-collapse">
                         <thead>
                             <tr className="border-b border-zinc-900 text-zinc-500 text-[10px] uppercase font-black tracking-widest">
-                                <th className="py-4 px-6 w-32">Epoch</th>
-                                <th className="py-4 px-6 w-40">Obj_Value</th>
-                                <th className="py-4 px-6">Historical_Context</th>
+                                <th className="py-4 px-6 w-32">運用年数</th>
+                                <th className="py-4 px-6 w-40">予想資産</th>
+                                <th className="py-4 px-6">ライフイベント</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -146,8 +146,8 @@ export default function Results({
                                 const eventInfo = i > 0 ? displayedEvents[i - 1].event : null;
                                 return (
                                     <tr key={d.year} className="border-b border-zinc-900/50 hover:bg-white/[0.02] transition-colors group">
-                                        <td className="py-6 px-6 font-mono text-zinc-400 font-black text-sm uppercase tracking-tighter">{d.year}Y</td>
-                                        <td className="py-6 px-6 font-black text-cp-cyan font-mono text-xl tracking-tighter">¥{Math.floor(d.amount / 10000).toLocaleString()}w</td>
+                                        <td className="py-6 px-6 font-mono text-zinc-400 font-black text-sm uppercase tracking-tighter">{d.year}年目</td>
+                                        <td className="py-6 px-6 font-black text-cp-cyan font-mono text-xl tracking-tighter">¥{Math.floor(d.amount / 10000).toLocaleString()}万円</td>
                                         <td className="py-6 px-6">
                                             {eventInfo ? (
                                                 <div className="opacity-80 group-hover:opacity-100 transition-opacity">
@@ -155,7 +155,7 @@ export default function Results({
                                                     <p className="text-sm text-zinc-400 leading-relaxed max-w-lg italic">{eventInfo.description}</p>
                                                 </div>
                                             ) : (
-                                                <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">// ARCHIVE_INIT</span>
+                                                <span className="text-zinc-600 text-[10px] uppercase font-bold tracking-widest">// 運用開始</span>
                                             )}
                                         </td>
                                     </tr>
@@ -170,10 +170,10 @@ export default function Results({
                             const eventInfo = i > 0 ? displayedEvents[i - 1].event : null;
                             return (
                                 <div key={d.year} className="bg-black/40 border border-zinc-900 p-6 flex flex-col gap-4 relative">
-                                    <div className="absolute top-0 right-0 p-2 text-[10px] font-mono text-zinc-800 tracking-tighter italic">LOG_{d.year}Y</div>
+                                    <div className="absolute top-0 right-0 p-2 text-[10px] font-mono text-zinc-800 tracking-tighter italic">記録_{d.year}年</div>
                                     <div className="flex justify-between items-center border-b border-zinc-900 pb-4">
-                                        <span className="font-black text-zinc-500 text-xs uppercase tracking-widest">{d.year}Y</span>
-                                        <span className="font-black text-cp-cyan font-sans text-2xl tracking-tighter">¥{Math.floor(d.amount / 10000).toLocaleString()}w</span>
+                                        <span className="font-black text-zinc-500 text-xs uppercase tracking-widest">{d.year}年目</span>
+                                        <span className="font-black text-cp-cyan font-sans text-2xl tracking-tighter">¥{Math.floor(d.amount / 10000).toLocaleString()}万円</span>
                                     </div>
                                     <div className="pt-2">
                                         {eventInfo ? (
@@ -182,7 +182,7 @@ export default function Results({
                                                 <p className="text-xs text-zinc-400 leading-relaxed italic">{eventInfo.description}</p>
                                             </div>
                                         ) : (
-                                            <span className="text-zinc-700 text-[10px] font-black uppercase tracking-widest italic">// ARCHIVE_INIT</span>
+                                            <span className="text-zinc-700 text-[10px] font-black uppercase tracking-widest italic">// 運用開始</span>
                                         )}
                                     </div>
                                 </div>
@@ -201,7 +201,7 @@ export default function Results({
                     </div>
                     <div className="relative z-10 max-w-3xl">
                         <span className="px-3 py-1 bg-cp-violet/20 text-cp-violet text-[10px] font-black border border-cp-violet/40 mb-8 inline-block tracking-[0.3em] uppercase">
-                            Operational_Phase: {currentPhase.name}
+                            運用フェーズ: {currentPhase.name}
                         </span>
                         <h3 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-none italic glitch-hover">
                             {currentPhase.strategy}
@@ -220,24 +220,24 @@ export default function Results({
                         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-12 relative z-10">
                             <div className="lg:w-2/3">
                                 <span className="px-4 py-2 bg-cp-cyan/10 text-cp-cyan text-[10px] font-black border border-cp-cyan/30 mb-10 inline-block tracking-[0.4em] uppercase">
-                                    Subject_Archetype: {mbtiProfile.type} // {mbtiProfile.name}
+                                    投資タイプ: {mbtiProfile.type} // {mbtiProfile.name}
                                 </span>
-                                <h3 className="text-4xl font-black text-white mb-10 uppercase tracking-tighter italic">Tactical_Adjustment</h3>
+                                <h3 className="text-4xl font-black text-white mb-10 uppercase tracking-tighter italic">戦術アドバイス</h3>
                                 <div className="space-y-8">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                         <div className="bg-black/40 p-6 border border-zinc-900 relative">
                                             <div className="absolute top-2 left-2 w-2 h-2 bg-cp-cyan shadow-[0_0_5px_var(--cp-cyan)]" />
-                                            <p className="text-[10px] text-zinc-500 mb-4 font-black tracking-widest uppercase">System_Strengths</p>
+                                            <p className="text-[10px] text-zinc-500 mb-4 font-black tracking-widest uppercase">あなたの強み</p>
                                             <p className="text-xl font-black text-cp-cyan tracking-tighter uppercase">{mbtiProfile.strength}</p>
                                         </div>
                                         <div className="bg-black/40 p-6 border border-zinc-900 relative">
                                             <div className="absolute top-2 left-2 w-2 h-2 bg-cp-fuchsia shadow-[0_0_5px_var(--cp-fuchsia)]" />
-                                            <p className="text-[10px] text-zinc-500 mb-4 font-black tracking-widest uppercase">Risk_Vector</p>
+                                            <p className="text-[10px] text-zinc-500 mb-4 font-black tracking-widest uppercase">リスク要因</p>
                                             <p className="text-xl font-black text-cp-fuchsia tracking-tighter uppercase">{mbtiProfile.weakness}</p>
                                         </div>
                                     </div>
                                     <div className="bg-gradient-to-r from-cp-cyan/20 to-transparent border-l-4 border-cp-cyan p-8 mt-10">
-                                        <p className="text-[10px] text-cp-cyan mb-4 font-black tracking-widest uppercase glow-text-cyan underline decoration-cp-cyan/30 underline-offset-4">Directive_Next_Action</p>
+                                        <p className="text-[10px] text-cp-cyan mb-4 font-black tracking-widest uppercase glow-text-cyan underline decoration-cp-cyan/30 underline-offset-4">次にとるべき行動</p>
                                         <p className="text-2xl md:text-4xl font-black text-white tracking-tighter italic uppercase leading-tight">{mbtiProfile.action}</p>
                                     </div>
                                 </div>
@@ -246,7 +246,7 @@ export default function Results({
                             <div className="lg:w-1/3 bg-black/40 p-10 border border-zinc-900 flex flex-col justify-center relative shadow-2xl mt-10 lg:mt-0">
                                 <div className="absolute top-4 left-4 text-4xl text-zinc-800 font-mono opacity-50 select-none">/ *</div>
                                 <div className="absolute bottom-4 right-4 text-4xl text-zinc-800 font-mono opacity-50 select-none">* /</div>
-                                <p className="text-[10px] text-zinc-600 mb-8 font-black tracking-[0.3em] text-center uppercase">// Perspective_Shift</p>
+                                <p className="text-[10px] text-zinc-600 mb-8 font-black tracking-[0.3em] text-center uppercase">// 視点の転換</p>
                                 <p className="text-zinc-100 font-bold text-center text-lg leading-relaxed relative z-10 italic font-medium">
                                     "{mbtiProfile.perspectiveShift}"
                                 </p>
@@ -258,7 +258,7 @@ export default function Results({
                                 href="https://toushi-shindan.vercel.app/"
                                 className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-cyan px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
                             >
-                                <span className="group-hover:neon-text-cyan transition-all">RE_INITIALIZE_DIAGNOSTIC</span>
+                                <span className="group-hover:neon-text-cyan transition-all">診断をやり直す</span>
                                 <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-cyan transition-all" />
                             </a>
                         </div>

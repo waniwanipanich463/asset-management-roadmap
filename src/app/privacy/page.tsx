@@ -75,7 +75,7 @@ export default function PrivacyPage() {
                     className="inline-flex items-center gap-2 text-cp-cyan hover:text-white transition-all mb-12 group neon-text-cyan"
                 >
                     <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                    <span className="font-bold tracking-widest uppercase">BACK TO NODE</span>
+                    <span className="font-bold tracking-widest uppercase">シミュレーションに戻る</span>
                 </Link>
 
                 <header className="mb-20 relative">
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
                     <div className="flex items-center gap-4 mb-6 text-cp-cyan neon-text-cyan">
                         <Lock className="w-10 h-10" />
                         <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase glitch-hover">
-                            Privacy <span className="text-cp-cyan">Protocol</span>
+                            プライバシー<span className="text-cp-cyan">ポリシー</span>
                         </h1>
                     </div>
                     <p className="text-zinc-400 text-lg max-w-2xl border-l-2 border-cp-cyan/30 pl-6 leading-relaxed">

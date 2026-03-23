@@ -17,12 +17,12 @@ export default function InputForm({
         <div className="flex flex-col gap-10">
             <h2 className="text-2xl font-black text-white flex items-center gap-3 uppercase tracking-tighter">
                 <span className="w-1.5 h-8 bg-cp-fuchsia shadow-[0_0_10px_var(--cp-fuchsia)] inline-block"></span>
-                System_Input
+                シミュレーション設定
             </h2>
 
             {/* 初期資産 */}
             <div className="space-y-4">
-                <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">Initial_Capital (JPY)</label>
+                <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">初期資産（円）</label>
                 <div className="flex gap-2">
                     {[1000000, 5000000, 10000000].map(val => (
                         <button
@@ -41,7 +41,7 @@ export default function InputForm({
                         onChange={(e) => update('initialAsset', Number(e.target.value))}
                         className="w-full bg-black/60 border border-zinc-800 rounded-sm px-4 py-4 text-white focus:outline-none focus:border-cp-fuchsia focus:shadow-[0_0_15px_rgba(255,0,255,0.2)] transition-all font-mono text-xl tracking-tighter"
                     />
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-zinc-600 uppercase">Val_JPY</div>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-zinc-600 uppercase">金額(円)</div>
                 </div>
                 <input
                     type="range"
@@ -54,7 +54,7 @@ export default function InputForm({
 
             {/* 毎月積立 */}
             <div className="space-y-4">
-                <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">Monthly_Contribution (JPY)</label>
+                <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">毎月積立（円）</label>
                 <div className="relative">
                     <input
                         type="number"
@@ -62,7 +62,7 @@ export default function InputForm({
                         onChange={(e) => update('monthlyInvestment', Number(e.target.value))}
                         className="w-full bg-black/60 border border-zinc-800 rounded-sm px-4 py-4 text-white focus:outline-none focus:border-cp-cyan focus:shadow-[0_0_15px_rgba(0,255,255,0.2)] transition-all font-mono text-xl tracking-tighter"
                     />
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-zinc-600 uppercase">Val_JPY</div>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-zinc-600 uppercase">金額(円)</div>
                 </div>
                 <input
                     type="range"
@@ -76,8 +76,8 @@ export default function InputForm({
             {/* 運用期間 */}
             <div className="space-y-4">
                 <div className="flex justify-between items-end">
-                    <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">Time_Horizon</label>
-                    <span className="text-xl font-black text-cp-yellow neon-text-yellow px-2 bg-cp-yellow/10">{input.years} YEARS</span>
+                    <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">運用期間</label>
+                    <span className="text-xl font-black text-cp-yellow neon-text-yellow px-2 bg-cp-yellow/10">{input.years} 年間</span>
                 </div>
                 <input
                     type="range"
@@ -91,7 +91,7 @@ export default function InputForm({
             {/* 想定年利 */}
             <div className="space-y-4">
                 <div className="flex justify-between items-end">
-                    <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">Annual_Yield</label>
+                    <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">想定年利</label>
                     <span className="text-xl font-black text-cp-cyan neon-text-cyan px-2 bg-cp-cyan/10">{input.annualReturn}%</span>
                 </div>
                 <input
@@ -106,7 +106,7 @@ export default function InputForm({
             {/* 目標資産 */}
             <div className="space-y-4 pt-10 border-t border-zinc-900 mt-2 relative">
                 <div className="absolute -top-[1px] left-0 w-8 h-[1px] bg-cp-cyan" />
-                <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">Target_Objective (JPY)</label>
+                <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">目標資産（円）</label>
                 <div className="flex gap-2">
                     {[50000000, 100000000, 200000000].map(val => (
                         <button
@@ -125,7 +125,7 @@ export default function InputForm({
                         onChange={(e) => update('targetAsset', Number(e.target.value))}
                         className="w-full bg-black/60 border border-zinc-800 rounded-sm px-4 py-4 text-white focus:outline-none focus:border-cp-cyan focus:shadow-[0_0_15px_rgba(0,255,255,0.2)] transition-all font-mono text-xl tracking-tighter"
                     />
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-zinc-600 uppercase">OBJ_SET</div>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-mono text-zinc-600 uppercase">目標設定</div>
                 </div>
             </div>
         </div>
