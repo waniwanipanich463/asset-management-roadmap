@@ -103,25 +103,6 @@ export default function SimulateClient({
                     まずは現実を知る。そして、未来をデザインする。
                 </p>
                 <div className="flex flex-col items-center gap-8 w-full">
-                    {/* サービス詳細LPへのリンク */}
-                    <a 
-                        href="https://tumugi-lp.vercel.app" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative flex items-center justify-center w-[90%] max-w-[500px] h-[72px] bg-black border-2 border-cp-cyan overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(0,255,255,0.4)]"
-                    >
-                        <div className="absolute inset-0 bg-cp-cyan translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                        <div className="flex items-center justify-center relative z-10 px-8">
-                            <span className="text-cp-cyan group-hover:text-black font-black text-lg md:text-xl transition-colors tracking-widest uppercase">
-                                資産を育てるつむぎの詳細を見る
-                            </span>
-                            <div className="ml-4 w-6 h-6 flex items-center justify-center bg-cp-cyan group-hover:bg-black text-black group-hover:text-cp-cyan transition-all duration-300">
-                                <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-4 h-4">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
 
                     {/* 既存の診断サイトへの戻りボタン */}
                     <a 
