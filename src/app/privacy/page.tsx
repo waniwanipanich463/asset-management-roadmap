@@ -72,7 +72,7 @@ export default function PrivacyPage() {
                 {/* Back Link */}
                 <Link
                     href="/simulate"
-                    className="inline-flex items-center gap-2 text-cp-cyan hover:text-white transition-all mb-12 group neon-text-cyan"
+                    className="inline-flex items-center gap-2 text-cp-cyan hover:text-white transition-all mb-12 group"
                 >
                     <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
                     <span className="font-bold tracking-widest uppercase">シミュレーションに戻る</span>
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
 
                 <header className="mb-20 relative">
                     <div className="absolute -left-4 top-0 w-1 h-14 bg-cp-cyan shadow-[0_0_15px_var(--cp-cyan)]" />
-                    <div className="flex items-center gap-4 mb-6 text-cp-cyan neon-text-cyan">
+                    <div className="flex items-center gap-4 mb-6 text-cp-cyan">
                         <Lock className="w-10 h-10" />
                         <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase glitch-hover">
                             プライバシー<span className="text-cp-cyan">ポリシー</span>

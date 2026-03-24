@@ -8,7 +8,7 @@ export default function OperatorPage() {
                 {/* Back Link */}
                 <Link
                     href="/simulate"
-                    className="inline-flex items-center gap-2 text-cp-cyan hover:text-white transition-all mb-12 group neon-text-cyan"
+                    className="inline-flex items-center gap-2 text-cp-cyan hover:text-white transition-all mb-12 group"
                 >
                     <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
                     <span className="font-bold tracking-widest">シミュレーションに戻る</span>
@@ -26,7 +26,7 @@ export default function OperatorPage() {
                     {/* Operating Entity Section */}
                     <section className="glass-card-cp rounded-none border-l-4 border-cp-cyan p-8 md:p-10 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-cp-cyan/5 -rotate-45 translate-x-16 -translate-y-16" />
-                        <div className="flex items-center gap-3 mb-8 text-cp-cyan neon-text-cyan">
+                        <div className="flex items-center gap-3 mb-8 text-cp-cyan text-cp-cyan">
                             <Info className="w-6 h-6" />
                             <h2 className="text-2xl font-black uppercase tracking-widest">運営者情報</h2>
                         </div>
@@ -56,7 +56,7 @@ export default function OperatorPage() {
 
                     {/* Disclaimer Section */}
                     <section className="glass-card-cp rounded-none border-r-4 border-cp-fuchsia p-8 md:p-10 relative overflow-hidden">
-                        <div className="flex items-center gap-3 mb-8 text-cp-fuchsia neon-text-fuchsia">
+                        <div className="flex items-center gap-3 mb-8 text-cp-fuchsia text-cp-fuchsia">
                             <ShieldAlert className="w-6 h-6" />
                             <h2 className="text-2xl font-black uppercase tracking-widest">免責事項</h2>
                         </div>

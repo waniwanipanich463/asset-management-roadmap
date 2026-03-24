@@ -59,7 +59,7 @@ export default function Results({
                     <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity text-cp-fuchsia">
                         <TrendingUp size={80} />
                     </div>
-                    <p className="text-cp-fuchsia font-black text-[10px] mb-2 uppercase tracking-[0.2em] neon-text-fuchsia">期待運用結果 ({input.years}年)</p>
+                    <p className="text-cp-fuchsia font-black text-[10px] mb-2 uppercase tracking-[0.2em]">期待運用結果 ({input.years}年)</p>
                     <p className="text-4xl lg:text-5xl font-black text-white font-sans tracking-tighter mt-2 whitespace-nowrap">
                         {Math.floor(result.finalAmount / 10000).toLocaleString()} <span className="text-xl text-zinc-500 font-sans font-medium uppercase">万円</span>
                     </p>
@@ -73,7 +73,7 @@ export default function Results({
                     <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                         <Target size={80} className={isTargetReached ? "text-cp-cyan" : "text-cp-yellow"} />
                     </div>
-                    <p className={`font-black text-[10px] mb-2 uppercase tracking-[0.2em] ${isTargetReached ? 'text-cp-cyan neon-text-cyan' : 'text-cp-yellow neon-text-yellow'}`}>目標達成状況</p>
+                    <p className={`font-black text-[10px] mb-2 uppercase tracking-[0.2em] ${isTargetReached ? 'text-cp-cyan' : 'text-cp-yellow'}`}>目標達成状況</p>
                     {isTargetReached ? (
                         <div className="mt-2 text-cp-cyan">
                             <p className="text-3xl font-black uppercase tracking-tighter mb-2">
@@ -129,7 +129,7 @@ export default function Results({
             {/* 10 Year Table & Events */}
             <div className="glass-card-cp rounded-none border border-zinc-900 p-8">
                 <h3 className="text-sm font-black text-white mb-10 flex items-center gap-3 uppercase tracking-[0.3em]">
-                    <Clock size={20} className="text-cp-cyan neon-text-cyan" /> 運用マイルストーン
+                    <Clock size={20} className="text-cp-cyan" /> 運用マイルストーン
                 </h3>
                 <div className="w-full">
                     {/* Desktop View */}
@@ -237,7 +237,7 @@ export default function Results({
                                         </div>
                                     </div>
                                     <div className="bg-gradient-to-r from-cp-cyan/20 to-transparent border-l-4 border-cp-cyan p-8 mt-10">
-                                        <p className="text-[10px] text-cp-cyan mb-4 font-black tracking-widest uppercase glow-text-cyan underline decoration-cp-cyan/30 underline-offset-4">次にとるべき行動</p>
+                                        <p className="text-[10px] text-cp-cyan mb-4 font-black tracking-widest uppercase underline decoration-cp-cyan/30 underline-offset-4">次にとるべき行動</p>
                                         <p className="text-2xl md:text-4xl font-black text-white tracking-tighter italic uppercase leading-tight">{mbtiProfile.action}</p>
                                     </div>
                                 </div>
@@ -258,7 +258,7 @@ export default function Results({
                                 href="https://toushi-shindan.vercel.app/"
                                 className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-cyan px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
                             >
-                                <span className="group-hover:neon-text-cyan transition-all">診断をやり直す</span>
+                                <span className="group-hover:text-cp-cyan transition-all">診断をやり直す</span>
                                 <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-cyan transition-all" />
                             </a>
                         </div>

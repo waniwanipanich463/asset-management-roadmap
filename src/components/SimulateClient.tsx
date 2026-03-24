@@ -99,7 +99,7 @@ export default function SimulateClient({
 
             {/* コピー＆CTAボタン (スライドショーの下に配置) */}
             <div className="max-w-6xl mx-auto px-4 text-center mt-[-40px] mb-16 relative z-30 w-full">
-                <p className="text-white text-xl md:text-3xl font-black tracking-tighter mb-10 uppercase neon-text-fuchsia italic drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]">
+                <p className="text-white text-xl md:text-3xl font-black tracking-tighter mb-10 uppercase italic">
                     まずは現実を知る。そして、未来をデザインする。
                 </p>
                 <div className="flex flex-col items-center gap-8 w-full">
