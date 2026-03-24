@@ -82,7 +82,7 @@ export default function PrivacyPage() {
                     <div className="absolute -left-4 top-0 w-1 h-14 bg-cp-cyan shadow-[0_0_15px_var(--cp-cyan)]" />
                     <div className="flex items-center gap-4 mb-6 text-cp-cyan">
                         <Lock className="w-10 h-10" />
-                        <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase glitch-hover">
+                        <h1 className="text-2xl md:text-6xl font-black text-white tracking-tighter uppercase glitch-hover whitespace-nowrap">
                             プライバシー<span className="text-cp-cyan">ポリシー</span>
                         </h1>
                     </div>
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
                             <div className="absolute top-0 right-0 p-2 text-[10px] font-mono text-cp-cyan/20">
                                 SECTION_ID: {index + 1}
                             </div>
-                            <h2 className="text-xl font-black text-white mb-6 uppercase tracking-widest flex items-center gap-2">
+                            <h2 className="text-sm md:text-xl font-black text-white mb-6 uppercase tracking-widest flex items-center gap-2 whitespace-nowrap">
                                 <span className="w-2 h-2 bg-cp-cyan" />
                                 {section.title}
                             </h2>
