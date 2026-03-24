@@ -54,7 +54,7 @@ export default function PrivacyPage() {
         },
         {
             title: "8. 個人情報の開示・訂正・削除",
-            content: "ご本人からの個人情報の開示・訂正・削除のご請求があった場合、適切に対応いたします。お問い合わせ先：money.revenge001@gmail.com"
+            content: "ご本人からの個人情報の開示・訂正・削除のご請求があった場合、適切に対応いたします。\nお問い合わせ先：money.revenge001@gmail.com"
         },
         {
             title: "9. 未成年の利用について",
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
                                 {section.title}
                             </h2>
                             <div className="space-y-4">
-                                <p className="text-xs md:text-base text-zinc-300 leading-relaxed font-medium">
+                                <p className="text-xs md:text-base text-zinc-300 leading-relaxed font-medium whitespace-pre-wrap">
                                     {section.content}
                                 </p>
                                 {section.list && (
