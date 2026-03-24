@@ -77,7 +77,7 @@ export default function InputForm({
             <div className="space-y-4">
                 <div className="flex justify-between items-end">
                     <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">運用期間</label>
-                    <span className="text-xl font-black text-cp-yellow px-2 bg-cp-yellow/10">{input.years} 年間</span>
+                    <span className="text-xl font-black text-cp-yellow">{input.years} 年間</span>
                 </div>
                 <input
                     type="range"
@@ -92,7 +92,7 @@ export default function InputForm({
             <div className="space-y-4">
                 <div className="flex justify-between items-end">
                     <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">想定年利</label>
-                    <span className="text-xl font-black text-cp-cyan px-2 bg-cp-cyan/10">{input.annualReturn}%</span>
+                    <span className="text-xl font-black text-cp-cyan">{input.annualReturn}%</span>
                 </div>
                 <input
                     type="range"
