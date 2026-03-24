@@ -67,7 +67,7 @@ export default function PrivacyPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-transparent text-zinc-100 font-sans scanlines">
+        <div className="min-h-screen bg-[#020205] text-zinc-100 font-sans scanlines">
             <div className="max-w-4xl mx-auto px-6 py-16 md:py-24 relative z-10">
                 {/* Back Link */}
                 <Link
