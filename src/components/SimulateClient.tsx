@@ -96,8 +96,8 @@ export default function SimulateClient({
                         priority
                     />
                     
-                    {/* グリッチレイヤー1 (シアン) */}
-                    <div className="absolute inset-0 z-0 opacity-70 mix-blend-screen overflow-hidden animate-[glitch-anim_5s_infinite_linear_alternate-reverse]">
+                    {/* グリッチレイヤー1 (シアン) - 8秒に一度一瞬だけ出現 */}
+                    <div className="absolute inset-0 z-0 mix-blend-screen overflow-hidden animate-[glitch-anim_8s_infinite_linear_alternate-reverse]">
                         <Image 
                             src="/title.png" 
                             alt="" 
@@ -107,8 +107,8 @@ export default function SimulateClient({
                         />
                     </div>
 
-                    {/* グリッチレイヤー2 (マゼンタ) */}
-                    <div className="absolute inset-0 z-0 opacity-70 mix-blend-screen overflow-hidden animate-[glitch-anim-2_1s_infinite_linear_alternate-reverse]">
+                    {/* グリッチレイヤー2 (マゼンタ) - 6秒に一度一瞬だけ出現 */}
+                    <div className="absolute inset-0 z-0 mix-blend-screen overflow-hidden animate-[glitch-anim-2_6s_infinite_linear_alternate-reverse]">
                         <Image 
                             src="/title.png" 
                             alt="" 
