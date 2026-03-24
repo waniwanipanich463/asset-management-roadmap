@@ -8,7 +8,7 @@ import Results from "./Results";
 import YouTubeDrawer from "./YouTubeDrawer";
 import mbtiData from "@/data/mbti.json";
 
-const bgImages = ["/haikei01.png", "/haikei02.png", "/haikei03.png", "/haikei04.png"];
+const bgImages = ["/haikei01.png", "/haikei02.png", "/haikei03.png", "/gazou.png"];
 
 export default function SimulateClient({
     initialMbti,
