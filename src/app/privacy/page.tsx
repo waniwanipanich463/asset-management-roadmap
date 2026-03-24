@@ -102,13 +102,13 @@ export default function PrivacyPage() {
                                 {section.title}
                             </h2>
                             <div className="space-y-4">
-                                <p className="text-zinc-300 leading-relaxed font-medium">
+                                <p className="text-xs md:text-base text-zinc-300 leading-relaxed font-medium">
                                     {section.content}
                                 </p>
                                 {section.list && (
                                     <ul className="space-y-3 ml-4">
                                         {section.list.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-zinc-400">
+                                            <li key={i} className="flex items-start gap-3 text-[10px] md:text-sm text-zinc-400">
                                                 <span className="text-cp-cyan font-bold">•</span>
                                                 <span>{item}</span>
                                             </li>
