@@ -203,10 +203,10 @@ export default function Results({
                         <span className="px-3 py-1 bg-cp-violet/20 text-cp-violet text-[10px] font-black border border-cp-violet/40 mb-8 inline-block tracking-[0.3em] uppercase">
                             運用フェーズ: {currentPhase.name}
                         </span>
-                        <h3 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-none italic">
+                        <h3 className="text-xl md:text-2xl font-black text-white mb-6 uppercase tracking-tighter leading-none italic whitespace-nowrap">
                             {currentPhase.strategy}
                         </h3>
-                        <p className="text-cp-violet text-lg md:text-xl mb-8 font-black uppercase tracking-widest neon-text-fuchsia">{currentPhase.priority}</p>
+                        <p className="text-cp-violet text-lg md:text-xl mb-8 font-black uppercase tracking-widest">{currentPhase.priority}</p>
                         <div className="bg-black/60 p-8 border border-zinc-900 backdrop-blur-xl">
                             <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-bold tracking-tight">{currentPhase.description}</p>
                         </div>
