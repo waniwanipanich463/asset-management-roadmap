@@ -28,7 +28,7 @@ export default function InputForm({
                         <button
                             key={val}
                             onClick={() => update('initialAsset', val)}
-                            className="flex-1 py-2 text-[10px] font-black rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400 hover:border-cp-fuchsia hover:text-cp-fuchsia hover:shadow-[0_0_8px_var(--cp-fuchsia)] transition-all uppercase tracking-tighter"
+                            className="flex-1 py-2 text-[10px] font-black rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400 hover:border-cp-fuchsia hover:text-cp-fuchsia transition-all uppercase tracking-tighter"
                         >
                             {val / 10000}万円
                         </button>
@@ -77,7 +77,7 @@ export default function InputForm({
             <div className="space-y-4">
                 <div className="flex justify-between items-end">
                     <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">運用期間</label>
-                    <span className="text-xl font-black text-cp-yellow neon-text-yellow px-2 bg-cp-yellow/10">{input.years} 年間</span>
+                    <span className="text-xl font-black text-cp-yellow px-2 bg-cp-yellow/10">{input.years} 年間</span>
                 </div>
                 <input
                     type="range"
@@ -92,7 +92,7 @@ export default function InputForm({
             <div className="space-y-4">
                 <div className="flex justify-between items-end">
                     <label className="text-xs text-zinc-500 font-black uppercase tracking-widest">想定年利</label>
-                    <span className="text-xl font-black text-cp-cyan neon-text-cyan px-2 bg-cp-cyan/10">{input.annualReturn}%</span>
+                    <span className="text-xl font-black text-cp-cyan px-2 bg-cp-cyan/10">{input.annualReturn}%</span>
                 </div>
                 <input
                     type="range"
@@ -112,7 +112,7 @@ export default function InputForm({
                         <button
                             key={val}
                             onClick={() => update('targetAsset', val)}
-                            className="flex-1 py-2 text-[10px] font-black rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400 hover:border-cp-cyan hover:text-cp-cyan hover:shadow-[0_0_8px_var(--cp-cyan)] transition-all uppercase tracking-tighter"
+                             className="flex-1 py-2 text-[10px] font-black rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400 hover:border-cp-cyan hover:text-cp-cyan transition-all uppercase tracking-tighter"
                         >
                             {val / 100000000 >= 1 ? `${val / 100000000}億円` : `${val / 10000}万円`}
                         </button>
