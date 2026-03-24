@@ -85,15 +85,38 @@ export default function SimulateClient({
                 </div>
 
                 {/* タイトルロゴ (背景の上に重ねる) */}
-                <div className="relative z-20 w-[85%] max-w-[600px] animate-glitch">
+                <div className="relative z-20 w-[85%] max-w-[600px] h-auto pointer-events-none select-none">
+                    {/* メイン画像 */}
                     <Image 
                         src="/title.png" 
                         alt="つむぎの資産運用シミュレーション" 
                         width={1200} 
                         height={600} 
-                        className="w-full h-auto"
+                        className="w-full h-auto relative z-10"
                         priority
                     />
+                    
+                    {/* グリッチレイヤー1 (シアン) */}
+                    <div className="absolute inset-0 z-0 opacity-70 mix-blend-screen overflow-hidden animate-[glitch-anim_5s_infinite_linear_alternate-reverse]">
+                        <Image 
+                            src="/title.png" 
+                            alt="" 
+                            width={1200} 
+                            height={600} 
+                            className="w-full h-auto scale-105 translate-x-1 filter hue-rotate-[180deg] brightness-150"
+                        />
+                    </div>
+
+                    {/* グリッチレイヤー2 (マゼンタ) */}
+                    <div className="absolute inset-0 z-0 opacity-70 mix-blend-screen overflow-hidden animate-[glitch-anim-2_1s_infinite_linear_alternate-reverse]">
+                        <Image 
+                            src="/title.png" 
+                            alt="" 
+                            width={1200} 
+                            height={600} 
+                            className="w-full h-auto scale-105 -translate-x-1 filter hue-rotate-[300deg] brightness-150"
+                        />
+                    </div>
                 </div>
             </header>
 
