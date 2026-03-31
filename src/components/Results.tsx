@@ -253,25 +253,6 @@ export default function Results({
                             </div>
                         </div>
 
-                            <div className="mt-12 flex flex-col items-center gap-6">
-                                <a
-                                    href="https://tumugi-lp.vercel.app"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-fuchsia px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
-                                >
-                                    <span className="group-hover:text-cp-fuchsia transition-all whitespace-nowrap">資産を育てるつむぎを見る</span>
-                                    <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-fuchsia transition-all" />
-                                </a>
-
-                                <a
-                                    href="https://toushi-shindan.vercel.app/"
-                                    className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-cyan px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
-                                >
-                                    <span className="group-hover:text-cp-cyan transition-all">診断をやり直す</span>
-                                    <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-cyan transition-all" />
-                                </a>
-                            </div>
                     </div>
                 )}
             </div>
