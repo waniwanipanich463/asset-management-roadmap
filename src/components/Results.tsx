@@ -253,17 +253,15 @@ export default function Results({
                             </div>
                         </div>
 
-                            <div className="mt-12 flex flex-col items-center gap-8">
+                            <div className="mt-12 flex flex-col items-center gap-6">
                                 <a
                                     href="https://tumugi-lp.vercel.app"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative px-6 sm:px-12 py-5 bg-gradient-to-r from-cp-cyan to-cp-fuchsia overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,255,255,0.3)] w-full sm:w-auto text-center"
+                                    className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-fuchsia px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
                                 >
-                                    <span className="relative z-10 text-black font-black text-base sm:text-lg tracking-tighter whitespace-nowrap">
-                                        資産を育てるつむぎを見る
-                                    </span>
-                                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
+                                    <span className="group-hover:text-cp-fuchsia transition-all whitespace-nowrap">資産を育てるつむぎを見る</span>
+                                    <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-fuchsia transition-all" />
                                 </a>
 
                                 <a

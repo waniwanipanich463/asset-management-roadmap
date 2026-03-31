@@ -30,14 +30,6 @@ export default function Footer() {
                     </div>
 
                     <nav className="flex items-center gap-10">
-                        <a
-                            href="https://tumugi-lp.vercel.app"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-black text-cp-cyan hover:text-white transition-all uppercase tracking-widest whitespace-nowrap"
-                        >
-                            資産を育てるつむぎを見る
-                        </a>
                         <Link
                             href="/operator"
                             className="text-sm font-bold text-zinc-400 hover:text-cp-cyan transition-all uppercase tracking-widest"
