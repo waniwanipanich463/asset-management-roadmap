@@ -253,15 +253,27 @@ export default function Results({
                             </div>
                         </div>
 
-                        <div className="mt-16 text-center lg:text-right">
-                            <a
-                                href="https://toushi-shindan.vercel.app/"
-                                className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-cyan px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
-                            >
-                                <span className="group-hover:text-cp-cyan transition-all">診断をやり直す</span>
-                                <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-cyan transition-all" />
-                            </a>
-                        </div>
+                            <div className="mt-12 flex flex-col items-center gap-8">
+                                <a
+                                    href="https://tumugi-lp.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group relative px-6 sm:px-12 py-5 bg-gradient-to-r from-cp-cyan to-cp-fuchsia overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,255,255,0.3)] w-full sm:w-auto text-center"
+                                >
+                                    <span className="relative z-10 text-black font-black text-base sm:text-lg tracking-tighter whitespace-nowrap">
+                                        資産を育てるつむぎを見る
+                                    </span>
+                                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
+                                </a>
+
+                                <a
+                                    href="https://toushi-shindan.vercel.app/"
+                                    className="group inline-flex items-center gap-4 text-[10px] text-zinc-500 hover:text-white transition-all bg-transparent hover:bg-zinc-900 border border-zinc-800 hover:border-cp-cyan px-8 py-4 rounded-none font-black uppercase tracking-[0.2em]"
+                                >
+                                    <span className="group-hover:text-cp-cyan transition-all">診断をやり直す</span>
+                                    <div className="w-1.5 h-1.5 bg-zinc-800 group-hover:bg-cp-cyan transition-all" />
+                                </a>
+                            </div>
                     </div>
                 )}
             </div>
