@@ -131,15 +131,15 @@ export default function SimulateClient({
                         href="https://tumugi-lp.vercel.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative flex items-center justify-center w-[90%] max-w-[500px] h-[72px] bg-black border-2 border-cp-cyan overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(0,255,255,0.4)]"
+                        className="group relative flex items-center justify-center w-[95%] sm:w-[90%] max-w-[550px] h-[72px] bg-black border-2 border-cp-cyan overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(0,255,255,0.4)]"
                     >
                         <div className="absolute inset-0 bg-cp-cyan translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                        <div className="flex items-center justify-center relative z-10 px-8">
-                            <span className="text-cp-cyan group-hover:text-black font-black text-sm md:text-base lg:text-lg transition-colors tracking-widest uppercase">
+                        <div className="flex items-center justify-center relative z-10 px-2 sm:px-6 w-full">
+                            <span className="text-cp-cyan group-hover:text-black font-black text-[10px] min-[375px]:text-xs sm:text-sm md:text-base transition-colors tracking-widest uppercase whitespace-nowrap mx-auto">
                                 100歳まで安心するための“出口戦略”を今すぐ受け取る
                             </span>
-                            <div className="ml-4 w-6 h-6 flex items-center justify-center bg-cp-cyan group-hover:bg-black text-black group-hover:text-cp-cyan transition-all duration-300 transform">
-                                <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-4 h-4">
+                            <div className="ml-1 sm:ml-4 flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center bg-cp-cyan group-hover:bg-black text-black group-hover:text-cp-cyan transition-all duration-300 transform">
+                                <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-3 h-3 sm:w-4 sm:h-4">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
@@ -149,15 +149,15 @@ export default function SimulateClient({
                     {/* 既存の診断サイトへの戻りボタン */}
                     <a 
                         href="https://toushi-shindan.vercel.app/"
-                        className="group relative flex items-center justify-center w-[90%] max-w-[500px] h-[72px] bg-black border-2 border-cp-fuchsia overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(255,0,255,0.4)]"
+                        className="group relative flex items-center justify-center w-[95%] sm:w-[90%] max-w-[550px] h-[72px] bg-black border-2 border-cp-fuchsia overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(255,0,255,0.4)]"
                     >
                         <div className="absolute inset-0 bg-cp-fuchsia translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                        <div className="flex items-center justify-center relative z-10 px-8">
-                            <span className="text-cp-fuchsia group-hover:text-black font-black text-lg md:text-xl transition-colors tracking-widest uppercase">
+                        <div className="flex items-center justify-center relative z-10 px-2 sm:px-6 w-full">
+                            <span className="text-cp-fuchsia group-hover:text-black font-black text-xs min-[375px]:text-sm sm:text-base md:text-lg transition-colors tracking-widest uppercase whitespace-nowrap mx-auto">
                                 投資診断をやり直す
                             </span>
-                            <div className="ml-4 w-6 h-6 flex items-center justify-center bg-cp-fuchsia group-hover:bg-black text-black group-hover:text-cp-fuchsia transition-all duration-300 transform rotate-180">
-                                <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-4 h-4">
+                            <div className="ml-1 sm:ml-4 flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center bg-cp-fuchsia group-hover:bg-black text-black group-hover:text-cp-fuchsia transition-all duration-300 transform rotate-180">
+                                <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-3 h-3 sm:w-4 sm:h-4">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
