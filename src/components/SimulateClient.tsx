@@ -135,8 +135,8 @@ export default function SimulateClient({
                     >
                         <div className="absolute inset-0 bg-cp-cyan translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                         <div className="flex items-center justify-center relative z-10 px-2 sm:px-6 w-full">
-                            <span className="text-cp-cyan group-hover:text-black font-black text-[10px] min-[375px]:text-xs sm:text-sm md:text-base transition-colors tracking-widest uppercase whitespace-nowrap mx-auto">
-                                100歳まで安心するための“出口戦略”を今すぐ受け取る
+                            <span className="text-cp-cyan group-hover:text-black font-black text-[10px] min-[375px]:text-[11px] sm:text-sm md:text-base transition-colors tracking-widest uppercase whitespace-normal sm:whitespace-nowrap mx-auto leading-tight">
+                                100歳まで安心するための<br className="sm:hidden" />“出口戦略”を今すぐ受け取る
                             </span>
                             <div className="ml-1 sm:ml-4 flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center bg-cp-cyan group-hover:bg-black text-black group-hover:text-cp-cyan transition-all duration-300 transform">
                                 <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-3 h-3 sm:w-4 sm:h-4">
