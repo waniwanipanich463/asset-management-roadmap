@@ -96,7 +96,7 @@ export default function YouTubeDrawer() {
                                     <div className="bg-zinc-950 p-6 border-l-2 border-cp-fuchsia">
                                         <p className="text-[10px] font-mono text-zinc-600 mb-2 uppercase tracking-widest">Description</p>
                                         <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-                                            つむぎ部屋の最新資産運用ロードマップ動画を公開中。この動画を見れば、より具体的な運用イメージを掴むことができます。
+                                            最新の資産運用ロードマップ動画を公開中。この動画を見れば、より具体的な運用イメージを掴むことができます。
                                         </p>
                                     </div>
 
@@ -115,7 +115,7 @@ export default function YouTubeDrawer() {
                             {/* Drawer Footer */}
                             <div className="mt-8 pt-6 border-t border-zinc-900 flex flex-col gap-4">
                                 <div className="text-[8px] font-mono text-zinc-700 uppercase tracking-widest text-center">
-                                    © 2026 つむぎ部屋 // GLOBAL BROADCAST SYSTEM
+                                    GLOBAL BROADCAST SYSTEM
                                 </div>
                             </div>
                         </motion.div>

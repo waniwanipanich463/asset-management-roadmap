@@ -32,17 +32,17 @@ export default function OperatorPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-y-6 gap-x-8 text-lg">
                             <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">運営主体名</div>
-                            <div className="text-white font-medium">つむぎ部屋</div>
+                            <div className="text-white font-medium">〇〇</div>
 
                             <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">所在地</div>
-                            <div className="text-white font-medium">日本 / Virtual Space</div>
+                            <div className="text-white font-medium">〇〇</div>
 
                             <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">連絡先</div>
                             <div className="text-cp-cyan font-bold hover:underline">
-                                <a href="mailto:money.revenge001@gmail.com">money.revenge001@gmail.com</a>
+                                <a href="mailto:〇〇">〇〇</a>
                             </div>
 
-                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">システムURL</div>
+                            <div className="text-zinc-500 font-bold uppercase tracking-tighter text-sm">サイトURL</div>
                             <div className="text-cp-fuchsia font-bold hover:underline break-all">
                                 <a href="https://youtube.com/channel/UC2VfIGmIV_2FSB7r0fIkbKg?si=4RIJ_ZebY8oljmo4" target="_blank" rel="noopener noreferrer">
                                     https://youtube.com/channel/UC2VfIGmIV_2FSB7r0fIkbKg?si=4RIJ_ZebY8oljmo4

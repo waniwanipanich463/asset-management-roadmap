@@ -54,7 +54,7 @@ export default function PrivacyPage() {
         },
         {
             title: "8. 個人情報の開示・訂正・削除",
-            content: "ご本人からの個人情報の開示・訂正・削除のご請求があった場合、適切に対応いたします。\nお問い合わせ先：money.revenge001@gmail.com"
+            content: "ご本人からの個人情報の開示・訂正・削除のご請求があった場合、適切に対応いたします。\nお問い合わせ先：〇〇"
         },
         {
             title: "9. 未成年の利用について",

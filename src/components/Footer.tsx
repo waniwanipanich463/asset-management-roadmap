@@ -14,21 +14,7 @@ export default function Footer() {
                     投資に関する最終判断はご自身の責任にてお願いいたします。
                 </div>
                 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-zinc-900 pt-8">
-                    <div className="flex flex-col gap-2">
-                        <div className="text-zinc-500 text-sm font-black tracking-[0.2em] uppercase">
-                            © 2026 つむぎ部屋
-                        </div>
-                        <a 
-                            href="https://www.shota-world.jp/" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-[10px] text-zinc-600 hover:text-cp-cyan transition-colors font-bold uppercase tracking-[0.1em]"
-                        >
-                            Designed by <span className="underline decoration-zinc-800 underline-offset-4">Shota Niwano</span>
-                        </a>
-                    </div>
-
+                <div className="flex flex-col md:flex-row items-center md:justify-end gap-8 border-t border-zinc-900 pt-8">
                     <nav className="flex items-center gap-10">
                         <Link
                             href="/operator"
