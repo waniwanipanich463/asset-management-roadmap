@@ -125,7 +125,27 @@ export default function SimulateClient({
                 <p className="text-white text-[3.8vw] md:text-3xl font-black tracking-tighter mb-10 uppercase italic whitespace-nowrap">
                     まずは現実を知る。そして、未来をデザインする。
                 </p>
+                <div className="flex flex-col items-center gap-6 w-full">
 
+
+                    {/* 既存の診断サイトへの戻りボタン */}
+                    <a 
+                        href="https://toushi-shindan.vercel.app/"
+                        className="group relative flex items-center justify-center w-[95%] sm:w-[90%] max-w-[550px] h-[72px] bg-black border-2 border-cp-fuchsia overflow-hidden transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] shadow-[0_0_20px_rgba(255,0,255,0.4)]"
+                    >
+                        <div className="absolute inset-0 bg-cp-fuchsia translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                        <div className="flex items-center justify-center relative z-10 px-2 sm:px-6 w-full">
+                            <span className="text-cp-fuchsia group-hover:text-black font-black text-xs min-[375px]:text-sm sm:text-base md:text-lg transition-colors tracking-widest uppercase whitespace-nowrap mx-auto">
+                                投資診断をやり直す
+                            </span>
+                            <div className="ml-1 sm:ml-4 flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center bg-cp-fuchsia group-hover:bg-black text-black group-hover:text-cp-fuchsia transition-all duration-300 transform rotate-180">
+                                <svg fill="none" viewBox="0 0 24 24" strokeWidth="4" stroke="currentColor" className="w-3 h-3 sm:w-4 sm:h-4">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div className="max-w-6xl mx-auto px-4 w-full relative z-10">
